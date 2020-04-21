@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Canvas</title>
-        <meta name="description" content="A simple tic tack toe game">
+        <meta name="description" content="Our canvas project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,8 +27,31 @@
             <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
         </div>
         <div class="buttons">
-            <span class="btn btn-primary fa fa-square" id="drawing-rectangle" >Drawing Rectangle</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-line" >Drawing Line</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-line">Drawing Line</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-straight">Straight Line</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-eraser">Eraser</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-text">Text</span>
+            <br>
+
+            <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Circle</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Polygon</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-polyline">Polyline</span>
+            <br>
+
+            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-undo">Undo</span>
+            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-redo">Redo</span>
+            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-fill-colour">Fill Colour</span>
+            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-fill-bucket">Fill Bucket</span>
+            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-stroke-colour">Stroke Colour</span>
+            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-stroke-width">Stroke Width</span>
+            <br>
+
+            <span class="btn btn-warning fa fa-paint-brush" id="drawing-scale">Scale</span>
+            <span class="btn btn-warning fa fa-paint-brush" id="drawing-stamp">Stamp</span>
+            <br>
+            
+            <span class="btn btn-dark fa fa-paint-brush" id="drawing-clear">Clear</span>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -38,17 +61,31 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script type='text/javascript' src="js/canvas-common.js"></script>
+
         <script type='text/javascript' src="js/drawing-line.js"></script>
+        <script type='text/javascript' src="js/drawing-straight.js"></script>
+        <script type='text/javascript' src="js/drawing-eraser.js"></script>
+        <script type='text/javascript' src="js/drawing-text.js"></script>
+
         <script type='text/javascript' src="js/drawing-rectangle.js"></script>
+        <script type='text/javascript' src="js/drawing-circle.js"></script>
+        <script type='text/javascript' src="js/drawing-polygon.js"></script>
+        <script type='text/javascript' src="js/drawing-polyline.js"></script>
+
+        <script type='text/javascript' src="js/drawing-undo.js"></script>
+        <script type='text/javascript' src="js/drawing-redo.js"></script>
+        <script type='text/javascript' src="js/drawing-fill-colour.js"></script>
+        <script type='text/javascript' src="js/drawing-fill-bucket.js"></script>
+        <script type='text/javascript' src="js/drawing-stroke-colour.js"></script>
+        <script type='text/javascript' src="js/drawing-stroke-width.js"></script>
+        
+        <script type='text/javascript' src="js/drawing-scale.js"></script>
+        <script type='text/javascript' src="js/drawing-stamp.js"></script>
+
+        <script type='text/javascript' src="js/drawing-clear.js"></script>
 
         <script type='text/javascript'>
-            $('#drawing-rectangle').click(()=>{
-                currentFunction = new DrawingRectangle(contextReal,contextDraft);
-            });
-            $('#drawing-line').click(()=>{
-                currentFunction = new DrawingLine(contextReal,contextDraft);
-            });
-            currentFunction = new DrawingRectangle(contextReal,contextDraft);    
+                currentFunction = new DrawingRectangle(contextReal,contextDraft);    
         </script>
 
     </body>

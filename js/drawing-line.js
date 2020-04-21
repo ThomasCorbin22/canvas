@@ -1,3 +1,7 @@
+$('#drawing-line').click(()=>{
+    currentFunction = new DrawingLine(contextReal,contextDraft);
+});
+
 class DrawingLine extends PaintFunction{
     constructor(contextReal){
         super();
