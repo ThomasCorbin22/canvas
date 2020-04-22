@@ -20,7 +20,11 @@ class DrawingPolygon extends PaintFunction{
         this.contextDraft.lineWidth = curWidth;
         this.contextDraft.fillStyle = curFill;
 
-        if (this.clickNum != 0){
+        if (this.clickNum != 0 && drawing === false){
+            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+            this.clickNum = 0
+        }
+        else if (this.clickNum != 0){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(coord[0],coord[1], numSides, this.contextDraft);
         }
@@ -36,11 +40,13 @@ class DrawingPolygon extends PaintFunction{
             this.origX = coord[0];
             this.origY = coord[1];
             this.clickNum++
+            drawing = true
         }
         else if (this.clickNum != 0) {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(coord[0],coord[1], numSides, this.contextReal);
             this.clickNum = 0
+            cPush()
         }
     }
 

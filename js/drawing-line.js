@@ -5,31 +5,46 @@ $('#drawing-line').click(()=>{
 class DrawingLine extends PaintFunction{
     constructor(contextReal){
         super();
-        this.context = contextReal;            
+        this.contextReal = contextReal;            
+        this.contextDraft = contextDraft;            
     }
     
     onMouseDown(coord,event){
-        this.context.strokeStyle = curStroke;
-        this.context.lineJoin = curJoin;
-        this.context.lineWidth = curWidth;
+        this.contextDraft.strokeStyle = curStroke;
+        this.contextDraft.lineJoin = curJoin;
+        this.contextDraft.lineWidth = curWidth;
+        drawing = true
 
-        this.context.beginPath();
-        this.context.moveTo(coord[0],coord[1]);
-        this.draw(coord[0],coord[1]);
+        this.contextDraft.beginPath();
+        this.contextDraft.moveTo(coord[0],coord[1]);
+        this.draw(coord[0],coord[1], this.contextDraft);
     }
     onDragging(coord,event){
-        this.draw(coord[0],coord[1]);
+        if (drawing === true){
+            this.draw(coord[0],coord[1], this.contextDraft);
+        }
+        else {
+            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        }
     }
 
     onMouseMove(){}
-    onMouseUp(){}
+    onMouseUp(){
+        let canvasPic = new Image();
+        canvasPic.src = canvasDraft.toDataURL()
+        canvasPic.onload = function () { 
+            contextReal.drawImage(canvasPic, 0, 0); 
+            contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+            cPush()
+        }
+    }
     onMouseLeave(){}
     onMouseEnter(){}
 
-    draw(x,y){
-        this.context.lineTo(x,y);
-        this.context.moveTo(x,y);
-        this.context.closePath();
-        this.context.stroke();    
+    draw(x,y, context){
+        context.lineTo(x,y);
+        context.moveTo(x,y);
+        context.closePath();
+        context.stroke();    
     }
 }
