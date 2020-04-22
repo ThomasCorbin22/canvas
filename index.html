@@ -35,6 +35,7 @@
 
             <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Circle</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Oval</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Polygon</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-polyline">Polyline</span>
             <br>
@@ -69,6 +70,7 @@
 
         <script type='text/javascript' src="js/drawing-rectangle.js"></script>
         <script type='text/javascript' src="js/drawing-circle.js"></script>
+        <!-- <script type='text/javascript' src="js/drawing-oval.js"></script> -->
         <script type='text/javascript' src="js/drawing-polygon.js"></script>
         <script type='text/javascript' src="js/drawing-polyline.js"></script>
 
@@ -85,9 +87,7 @@
         <script type='text/javascript' src="js/drawing-clear.js"></script>
 
         <script type='text/javascript'>
-            $(function() {
-                currentFunction = new DrawingRectangle(contextReal,contextDraft); 
-            })
+            currentFunction = new DrawingRectangle(contextReal,contextDraft); 
         </script>
 
     </body>
