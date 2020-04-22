@@ -35,7 +35,7 @@ class DrawingStraightLine extends PaintFunction{
             this.origY = coord[1];
             this.clickNum++
         }
-        else if (this.clickNum != 0) {
+        else if (this.clickNum === 1) {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(coord[0],coord[1], this.contextReal);
             this.clickNum = 0

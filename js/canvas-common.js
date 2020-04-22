@@ -15,11 +15,6 @@ let numSides = 8
 let canvasHeight = $('#canvas-real').attr('height').replace('px','')
 let canvasWidth = $('#canvas-real').attr('width').replace('px','')
 
-// let outlineLayer = contextReal.getImageData(0, 0, canvasWidth, canvasHeight);
-// let colorLayer = contextReal.getImageData(0, 0, canvasWidth, canvasHeight);
-// console.log(outlineLayerData)
-// console.log(colorLayerData)
-
 let currentFunction;
 let dragging = false;
 let drawing = false
