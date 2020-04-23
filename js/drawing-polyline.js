@@ -25,6 +25,7 @@ class DrawingPolyline extends PaintFunction{
 
             this.XY = []
             this.clickNum = 0
+            cPush()
         }
         else if (this.clickNum != 0){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
@@ -40,18 +41,19 @@ class DrawingPolyline extends PaintFunction{
 
         if (this.clickNum === 0) {
             this.XY = [ [coord[0], coord[1]] ];
-            drawing = true
             this.clickNum++
+            drawing = true
         }
-        else if (this.clickNum != 0 && this.closed(this.XY, coord[0], coord[1]) && drawing === true){
+        else if (this.clickNum != 0 && this.closed(this.XY, coord[0], coord[1])){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(this.XY, coord[0], coord[1], this.contextReal, 'closed');
 
             this.XY = []
             this.clickNum = 0
             drawing = false
+            cPush()
         }
-        else if (this.clickNum != 0 && drawing === true) {
+        else if (this.clickNum != 0) {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(this.XY, coord[0], coord[1], this.contextDraft, 'open');
 
@@ -75,7 +77,7 @@ class DrawingPolyline extends PaintFunction{
         else if ( x !== '' || y != '') {
             context.lineTo(x,y);
         }
-        // context.fill();
+        context.fill();
         context.stroke();
     }
 

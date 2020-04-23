@@ -19,8 +19,7 @@ let currentFunction;
 let dragging = false;
 let drawing = false
 
-
-$(document).keypress(function (e) {
+$(document).keydown(function (e) {
     if (e.key === "Enter" || e.key === "Escape") {
         drawing = false
     }
