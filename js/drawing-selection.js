@@ -33,6 +33,8 @@ class DrawingSection extends PaintFunction {
             this.origX = coord[0];
             this.origY = coord[1];
 
+            // For marching ants in selection
+
             // selOrigX = 0
             // selOrigY = 0
             // selWidth = 0
@@ -46,6 +48,8 @@ class DrawingSection extends PaintFunction {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.contextDraft.strokeRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
 
+            // For marching ants in selection
+            
             // selOrigX = this.origX
             // selOrigY = this.origY
             // selWidth = coord[0] - this.origX
@@ -59,6 +63,9 @@ class DrawingSection extends PaintFunction {
     onMouseLeave() { }
     onMouseEnter() { }
 }
+
+
+// For marching ants in selection
 
 // function draw() {
 //     contextDraft.clearRect(0, 0, canvasWidth, canvasHeight);

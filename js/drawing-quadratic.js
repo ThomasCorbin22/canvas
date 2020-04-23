@@ -1,8 +1,8 @@
 $('#drawing-quadratic').click(() => {
-    currentFunction = new DrawingQuadraticLine(contextReal, contextDraft);
+    currentFunction = new DrawingQuadratic(contextReal, contextDraft);
 });
 
-class DrawingQuadraticLine extends PaintFunction {
+class DrawingQuadratic extends PaintFunction {
     constructor(contextReal, contextDraft) {
         super();
         this.contextReal = contextReal;
