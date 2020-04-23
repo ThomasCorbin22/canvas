@@ -11,9 +11,16 @@ let curJoin = "round"
 let curWidth = 5
 let curMitre = 10
 let numSides = 8
+let curOffset = 0;
 
 let canvasHeight = $('#canvas-real').attr('height').replace('px','')
 let canvasWidth = $('#canvas-real').attr('width').replace('px','')
+
+let selActive = false
+let selOrigX = 0
+let selOrigY = 0
+let selWidth = 0
+let selHeight = 0
 
 let currentFunction;
 let dragging = false;
@@ -59,11 +66,6 @@ $('#canvas-draft').mouseenter(function(e){
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     currentFunction.onMouseEnter([mouseX,mouseY],e);
-});
-
-$('#canvas-draft').mouseenter(function(e){
-    let mouseX = e.offsetX;
-    let mouseY = e.offsetY;
 });
 
 class PaintFunction{

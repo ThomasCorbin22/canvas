@@ -27,18 +27,25 @@
             <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
         </div>
         <div class="buttons">
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-line">Drawing Line</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-straight">Straight Line</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-selection">Selection</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-move">Move</span>
             <span class="btn btn-primary fa fa-paint-brush" id="drawing-eraser">Eraser</span>
             <span class="btn btn-primary fa fa-paint-brush" id="drawing-text">Text</span>
             <br>
 
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-line">Drawing Line</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-straight">Straight Line</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-polyline">Polyline</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-bezier">Bezier Curve</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-quadratic">Quadractic Curve</span>
+            <br>
+            
             <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Circle</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-arc">Arc</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Polygon</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-polyline">Polyline</span>
             <br>
-
+            
             <span class="btn btn-secondary fa fa-paint-brush" id="drawing-undo">Undo</span>
             <span class="btn btn-secondary fa fa-paint-brush" id="drawing-redo">Redo</span>
             <span class="btn btn-secondary fa fa-paint-brush" id="drawing-fill-colour">Fill Colour</span>
@@ -62,16 +69,22 @@
 
         <script type='text/javascript' src="js/canvas-common.js"></script>
 
-        <script type='text/javascript' src="js/drawing-line.js"></script>
-        <script type='text/javascript' src="js/drawing-straight.js"></script>
+        <script type='text/javascript' src="js/drawing-selection.js"></script>
+        <script type='text/javascript' src="js/drawing-move.js"></script>
         <script type='text/javascript' src="js/drawing-eraser.js"></script>
         <script type='text/javascript' src="js/drawing-text.js"></script>
+        
+        <script type='text/javascript' src="js/drawing-line.js"></script>
+        <script type='text/javascript' src="js/drawing-straight.js"></script>
+        <script type='text/javascript' src="js/drawing-polyline.js"></script>
+        <script type='text/javascript' src="js/drawing-bezier.js"></script>
+        <script type='text/javascript' src="js/drawing-quadratic.js"></script>
 
         <script type='text/javascript' src="js/drawing-rectangle.js"></script>
         <script type='text/javascript' src="js/drawing-circle.js"></script>
+        <script type='text/javascript' src="js/drawing-arc.js"></script>
         <script type='text/javascript' src="js/drawing-polygon.js"></script>
-        <script type='text/javascript' src="js/drawing-polyline.js"></script>
-
+        
         <script type='text/javascript' src="js/drawing-undo.js"></script>
         <script type='text/javascript' src="js/drawing-redo.js"></script>
         <script type='text/javascript' src="js/drawing-fill-colour.js"></script>
