@@ -3,7 +3,7 @@ $('#drawing-polyline').click(()=>{
 });
 
 class DrawingPolyline extends PaintFunction{
-    constructor(contextReal){
+    constructor(contextReal,contextDraft){
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
@@ -21,7 +21,7 @@ class DrawingPolyline extends PaintFunction{
 
         if (this.clickNum != 0 && drawing === false){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(this.XY, '', '', this.contextReal, 'open');
+            this.draw('', '', this.contextReal, 'open');
 
             this.XY = []
             this.clickNum = 0
@@ -29,7 +29,7 @@ class DrawingPolyline extends PaintFunction{
         }
         else if (this.clickNum != 0){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(this.XY, coord[0], coord[1] , this.contextDraft, 'open');
+            this.draw(coord[0], coord[1] , this.contextDraft, 'open');
         }
     }
 
@@ -44,9 +44,9 @@ class DrawingPolyline extends PaintFunction{
             this.clickNum++
             drawing = true
         }
-        else if (this.clickNum != 0 && this.closed(this.XY, coord[0], coord[1])){
+        else if (this.clickNum != 0 && this.closed(coord[0], coord[1])){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(this.XY, coord[0], coord[1], this.contextReal, 'closed');
+            this.draw(coord[0], coord[1], this.contextReal, 'closed');
 
             this.XY = []
             this.clickNum = 0
@@ -55,7 +55,7 @@ class DrawingPolyline extends PaintFunction{
         }
         else if (this.clickNum != 0) {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(this.XY, coord[0], coord[1], this.contextDraft, 'open');
+            this.draw(coord[0], coord[1], this.contextDraft, 'open');
 
             this.XY.push([coord[0], coord[1]])
             this.clickNum++
@@ -65,11 +65,11 @@ class DrawingPolyline extends PaintFunction{
     onMouseLeave(){}
     onMouseEnter(){}
 
-    draw(XY, x, y, context, closed){
+    draw(x, y, context, closed){
         context.beginPath();
-        context.moveTo(XY[0][0],XY[0][1]);
-        for (let i = 1; i < XY.length; i++){
-            context.lineTo(XY[i][0],XY[i][1]);
+        context.moveTo(this.XY[0][0],this.XY[0][1]);
+        for (let i = 1; i < this.XY.length; i++){
+            context.lineTo(this.XY[i][0],this.XY[i][1]);
         }
         if (closed === 'closed'){
             context.closePath();
@@ -81,13 +81,13 @@ class DrawingPolyline extends PaintFunction{
         context.stroke();
     }
 
-    closed(XY, x, y){
+    closed(x, y){
         let coordMatch = 0
         for (let i = -10; i < 10; i++){
-            if (x + i === XY[0][0]){
+            if (x + i === this.XY[0][0]){
                 coordMatch++
             }
-            if (y + i === XY[0][1]){
+            if (y + i === this.XY[0][1]){
                 coordMatch++
             }
         }
