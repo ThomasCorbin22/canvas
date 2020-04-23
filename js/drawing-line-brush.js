@@ -1,8 +1,8 @@
-$('#drawing-line').click(()=>{
-    currentFunction = new DrawingLine(contextReal,contextDraft);
+$('#drawing-brushedline').click(()=>{
+    currentFunction = new DrawingBrushLine(contextReal,contextDraft);
 });
 
-class DrawingLine extends PaintFunction{
+class DrawingBrushLine extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();
         this.contextReal = contextReal;            
@@ -13,6 +13,8 @@ class DrawingLine extends PaintFunction{
         this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
+        this.contextDraft.shadowBlur = 10;
+        this.contextDraft.shadowColor = curStroke;
         drawing = true
 
         this.contextDraft.beginPath();
@@ -35,8 +37,11 @@ class DrawingLine extends PaintFunction{
         canvasPic.onload = function () { 
             contextReal.drawImage(canvasPic, 0, 0); 
             contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+            console.log('Got here')
             cPush()
         }
+        this.contextDraft.shadowBlur = 0;
+        this.contextDraft.shadowColor = '';
     }
     onMouseLeave(){}
     onMouseEnter(){}

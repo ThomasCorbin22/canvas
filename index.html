@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor/boilerplate.css">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+
         <link rel="stylesheet" href="css/style.css">
 
         <script src="https://kit.fontawesome.com/e6b2429683.js" crossorigin="anonymous"></script>
@@ -26,20 +28,28 @@
             <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
             <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
         </div>
+ 
         <div class="buttons">
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-line">Drawing Line</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-straight">Straight Line</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-selection">Selection</span>
+            <span class="btn btn-primary fa fa-paint-brush" id="drawing-move">Move</span>
             <span class="btn btn-primary fa fa-paint-brush" id="drawing-eraser">Eraser</span>
             <span class="btn btn-primary fa fa-paint-brush" id="drawing-text">Text</span>
             <br>
 
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-line">Drawing Line</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-brushedline">Drawing Line-brush</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-straight">Straight Line</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-polyline">Polyline</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-bezier">Bezier Curve</span>
+            <span class="btn btn-success fa fa-paint-brush" id="drawing-quadratic">Quadractic Curve</span>
+            <br>
+            
             <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Circle</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Oval</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-arc">Arc</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Polygon</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-polyline">Polyline</span>
             <br>
-
+            
             <span class="btn btn-secondary fa fa-paint-brush" id="drawing-undo">Undo</span>
             <span class="btn btn-secondary fa fa-paint-brush" id="drawing-redo">Redo</span>
             <span class="btn btn-secondary fa fa-paint-brush" id="drawing-fill-colour">Fill Colour</span>
@@ -53,7 +63,21 @@
             <br>
             
             <span class="btn btn-dark fa fa-paint-brush" id="drawing-clear">Clear</span>
+            <!-- Color control button  -->
+            <span class="Strokecolor-picker"></span>
+            <span class="Fillcolor-picker"></span>
+            <!-- Strok selector -->
+            <label for="width-select">Select the stroke width:</label>
+            <select id="width-select" onchange="setstrokewidth()" >
+                <option value="1">1px</option>
+                <option value="3">3px</option>
+                <option value="5" selected="selected">5px</option>
+                <option value="7">7px</option>
+                <option value="9">9px</option>
+                <option value="50">MAX</option>
+            </select>
         </div>
+        
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         
@@ -61,19 +85,27 @@
         <script src="js/vendor/jquery-3.5.0.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
         <script type='text/javascript' src="js/canvas-common.js"></script>
 
-        <script type='text/javascript' src="js/drawing-line.js"></script>
-        <script type='text/javascript' src="js/drawing-straight.js"></script>
+        <script type='text/javascript' src="js/drawing-selection.js"></script>
+        <script type='text/javascript' src="js/drawing-move.js"></script>
         <script type='text/javascript' src="js/drawing-eraser.js"></script>
         <script type='text/javascript' src="js/drawing-text.js"></script>
+        
+        <script type='text/javascript' src="js/drawing-line.js"></script>
+        <script type='text/javascript' src="js/drawing-line-brush.js"></script>
+        <script type='text/javascript' src="js/drawing-straight.js"></script>
+        <script type='text/javascript' src="js/drawing-polyline.js"></script>
+        <script type='text/javascript' src="js/drawing-bezier.js"></script>
+        <script type='text/javascript' src="js/drawing-quadratic.js"></script>
 
         <script type='text/javascript' src="js/drawing-rectangle.js"></script>
         <script type='text/javascript' src="js/drawing-circle.js"></script>
-        <!-- <script type='text/javascript' src="js/drawing-oval.js"></script> -->
+        <script type='text/javascript' src="js/drawing-arc.js"></script>
         <script type='text/javascript' src="js/drawing-polygon.js"></script>
-        <script type='text/javascript' src="js/drawing-polyline.js"></script>
-
+        
         <script type='text/javascript' src="js/drawing-undo.js"></script>
         <script type='text/javascript' src="js/drawing-redo.js"></script>
         <script type='text/javascript' src="js/drawing-fill-colour.js"></script>

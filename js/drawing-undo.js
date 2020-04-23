@@ -8,7 +8,7 @@ let cStep = -1;
 function cPush() {
     cStep++;
     if (cStep < cPushArray.length) { cPushArray.length = cStep; }
-    cPushArray.push(document.getElementById('canvas-real').toDataURL());
+    cPushArray.push(canvasReal.toDataURL());
 }
 
 function cUndo() {
