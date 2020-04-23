@@ -7,6 +7,7 @@ let contextDraft = canvasDraft.getContext('2d');
 let curStroke = "rgba(50, 50, 50, 1)"
 let curFill = "rgba(255, 150, 150, 1)"
 
+
 let curJoin = "round"
 let curWidth = 5
 let curMitre = 10

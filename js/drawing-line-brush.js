@@ -1,18 +1,20 @@
-$('#drawing-eraser').click(()=>{
-    currentFunction = new DrawingEraser(contextReal,contextDraft);
+$('#drawing-brushedline').click(()=>{
+    currentFunction = new DrawingBrushLine(contextReal,contextDraft);
 });
 
-class DrawingEraser extends PaintFunction{
-    constructor(contextReal){
+class DrawingBrushLine extends PaintFunction{
+    constructor(contextReal, contextDraft){
         super();
         this.contextReal = contextReal;            
         this.contextDraft = contextDraft;            
     }
     
     onMouseDown(coord,event){
-        this.contextDraft.strokeStyle = "rgba(255, 255, 255, 1)";
+        this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
+        this.contextDraft.shadowBlur = 10;
+        this.contextDraft.shadowColor = curStroke;
         drawing = true
 
         this.contextDraft.beginPath();
@@ -35,8 +37,11 @@ class DrawingEraser extends PaintFunction{
         canvasPic.onload = function () { 
             contextReal.drawImage(canvasPic, 0, 0); 
             contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+            console.log('Got here')
             cPush()
         }
+        this.contextDraft.shadowBlur = 0;
+        this.contextDraft.shadowColor = '';
     }
     onMouseLeave(){}
     onMouseEnter(){}
