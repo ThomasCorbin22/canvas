@@ -33,22 +33,25 @@ class DrawingSection extends PaintFunction {
             this.origX = coord[0];
             this.origY = coord[1];
 
-            selOrigX = 0
-            selOrigY = 0
-            selWidth = 0
-            selHeight = 0
+            // selOrigX = 0
+            // selOrigY = 0
+            // selWidth = 0
+            // selHeight = 0
 
             this.clickNum++
             drawing = true
         }
 
         else if (this.clickNum === 1) {
-            selOrigX = this.origX
-            selOrigY = this.origY
-            selWidth = coord[0] - this.origX
-            selHeight = coord[1] - this.origY
+            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+            this.contextDraft.strokeRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
 
-            march();
+            // selOrigX = this.origX
+            // selOrigY = this.origY
+            // selWidth = coord[0] - this.origX
+            // selHeight = coord[1] - this.origY
+
+            // march();
 
             this.clickNum = 0
         }
@@ -57,17 +60,17 @@ class DrawingSection extends PaintFunction {
     onMouseEnter() { }
 }
 
-function draw() {
-    contextDraft.clearRect(0, 0, canvasWidth, canvasHeight);
-    contextDraft.lineDashOffset = -curOffset;
-    contextDraft.strokeRect(selOrigX, selOrigY, selWidth, selHeight);
-}
+// function draw() {
+//     contextDraft.clearRect(0, 0, canvasWidth, canvasHeight);
+//     contextDraft.lineDashOffset = -curOffset;
+//     contextDraft.strokeRect(selOrigX, selOrigY, selWidth, selHeight);
+// }
 
-function march() {
-    curOffset++;
-    if (curOffset > 16) {
-        curOffset = 0;
-    }
-    draw();
-    setTimeout(march, 20);
-}
+// function march() {
+//     curOffset++;
+//     if (curOffset > 16) {
+//         curOffset = 0;
+//     }
+//     draw();
+//     setTimeout(march, 20);
+// }
