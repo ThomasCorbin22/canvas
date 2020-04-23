@@ -1,8 +1,8 @@
 $('#drawing-bezier').click(()=>{
-    currentFunction = new DrawingBezierLine(contextReal,contextDraft);
+    currentFunction = new DrawingBezier(contextReal,contextDraft);
 });
 
-class DrawingBezierLine extends PaintFunction{
+class DrawingBezier extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();
         this.contextReal = contextReal;
