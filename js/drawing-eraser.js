@@ -3,7 +3,7 @@ $('#drawing-eraser').click(()=>{
 });
 
 class DrawingEraser extends PaintFunction{
-    constructor(contextReal){
+    constructor(contextReal, contextDraft){
         super();
         this.contextReal = contextReal;            
         this.contextDraft = contextDraft;            

@@ -25,7 +25,7 @@ class DrawingStraightLine extends PaintFunction{
         }
         else if (this.clickNum != 0){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(coord[0],coord[1], this.contextDraft);
+            drawStraight(this.origX, this.origY, coord[0],coord[1], this.contextDraft);
         }
     }
 
@@ -42,7 +42,7 @@ class DrawingStraightLine extends PaintFunction{
         }
         else if (this.clickNum === 1) {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(coord[0],coord[1], this.contextReal);
+            drawStraight(this.origX, this.origY, coord[0],coord[1], this.contextReal);
             this.clickNum = 0
             cPush()
         }
@@ -50,11 +50,4 @@ class DrawingStraightLine extends PaintFunction{
 
     onMouseLeave(){}
     onMouseEnter(){}
-
-    draw(x,y, context){
-        context.beginPath();
-        context.moveTo(this.origX,this.origY);
-        context.lineTo(x,y);
-        context.stroke();    
-    }
 }

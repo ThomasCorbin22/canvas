@@ -44,7 +44,7 @@ class DrawingPolyline extends PaintFunction{
             this.clickNum++
             drawing = true
         }
-        else if (this.clickNum != 0 && this.closed(coord[0], coord[1])){
+        else if (this.clickNum != 0 && isClosed(coord[0], coord[1], this.XY[0][0], this.XY[0][1])){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(coord[0], coord[1], this.contextReal, 'closed');
 
@@ -79,21 +79,5 @@ class DrawingPolyline extends PaintFunction{
         }
         context.fill();
         context.stroke();
-    }
-
-    closed(x, y){
-        let coordMatch = 0
-        for (let i = -10; i < 10; i++){
-            if (x + i === this.XY[0][0]){
-                coordMatch++
-            }
-            if (y + i === this.XY[0][1]){
-                coordMatch++
-            }
-        }
-        if (coordMatch === 2){
-            return true
-        }
-        return false
     }
 }

@@ -121,18 +121,3 @@ function paintBucketFill(coord, context) {
     context.putImageData(imgData, 0, 0);
 }
 
-
-function matchStartColour(pixelPos, startR, startG, startB, imgData) {
-    let r = imgData.data[pixelPos];
-    let g = imgData.data[pixelPos + 1];
-    let b = imgData.data[pixelPos + 2];
-
-    return (r == startR && g == startG && b == startB);
-}
-
-function colorPixel(pixelPos, imgData) {
-    imgData.data[pixelPos] = 50;
-    imgData.data[pixelPos + 1] = 50;
-    imgData.data[pixelPos + 2] = 50;
-    imgData.data[pixelPos + 3] = 255;
-}

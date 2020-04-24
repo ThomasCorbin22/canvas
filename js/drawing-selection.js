@@ -14,6 +14,7 @@ class DrawingSection extends PaintFunction {
     onDragging() { }
 
     onMouseMove(coord, event) {
+        this.contextDraft.save()
         this.contextDraft.strokeStyle = "rgba(255, 0, 0, 1)"
         this.contextDraft.lineWidth = 2;
         this.contextDraft.setLineDash([3, 3]);
@@ -26,6 +27,7 @@ class DrawingSection extends PaintFunction {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.contextDraft.strokeRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY)
         }
+        this.contextDraft.restore()
     }
 
     onMouseUp(coord, event) {
@@ -45,6 +47,11 @@ class DrawingSection extends PaintFunction {
         }
 
         else if (this.clickNum === 1) {
+            this.contextDraft.save()
+            this.contextDraft.strokeStyle = "rgba(255, 0, 0, 1)"
+            this.contextDraft.lineWidth = 2;
+            this.contextDraft.setLineDash([3, 3]);
+
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.contextDraft.strokeRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
 
@@ -58,6 +65,7 @@ class DrawingSection extends PaintFunction {
             // march();
 
             this.clickNum = 0
+            this.contextDraft.restore()
         }
     }
     onMouseLeave() { }

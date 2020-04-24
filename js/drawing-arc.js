@@ -25,14 +25,15 @@ class DrawingArc extends PaintFunction {
         }
         else if (this.clickNum === 1) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            this.drawStraight(coord[0], coord[1], this.contextDraft);
+            drawStraight(this.origX, this.origY, coord[0], coord[1], this.contextDraft);
         }
         else if (this.clickNum === 2) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.drawArc(coord[0], coord[1], this.contextDraft);
-            this.drawDotted(this.origX, this.origY, coord[0], coord[1], this.contextDraft)
-            this.drawDotted(this.finalX, this.finalY, coord[0], coord[1], this.contextDraft)
-            this.drawRect(coord[0], coord[1], this.contextDraft)
+            
+            drawDotted(this.origX, this.origY, this.cpx1, this.cpy1, this.contextDraft)
+            drawDotted(this.cpx1, this.cpy1, coord[0], coord[1], this.contextDraft)
+            drawRect(this.cpx1, this.cpy1, this.contextDraft)
         }
     }
 
@@ -49,8 +50,8 @@ class DrawingArc extends PaintFunction {
             drawing = true
         }
         else if (this.clickNum === 1) {
-            this.finalX = coord[0];
-            this.finalY = coord[1];
+            this.cpx1 = coord[0];
+            this.cpy1 = coord[1];
 
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.drawArc(coord[0], coord[1], this.contextDraft);
@@ -67,45 +68,11 @@ class DrawingArc extends PaintFunction {
     onMouseLeave() { }
     onMouseEnter() { }
 
-    drawStraight(x, y, context) {
+    drawArc(x, y, context) {
         context.beginPath();
         context.moveTo(this.origX, this.origY);
-        context.lineTo(x, y);
+        context.arcTo(this.cpx1, this.cpy1, x, y, getChordLength(this.cpx1, this.cpy1, this.origX, this.origY, x, y))
+        context.lineTo(x, y)
         context.stroke();
-    }
-
-    drawArc(cpx, cpy, context) {
-        context.beginPath();
-        context.moveTo(this.origX, this.origY);
-        context.arcTo(cpx, cpy, this.finalX, this.finalY, 50)
-        context.lineTo(this.finalX, this.finalY)
-        context.stroke();
-    }
-
-    drawDotted(x, y, cpx, cpy, context) {
-        context.save()
-        context.strokeStyle = "rgba(255, 0, 0, 1)"
-        context.lineWidth = 2;
-        context.setLineDash([3, 3]);
-        context.beginPath();
-        context.moveTo(x, y);
-        context.lineTo(cpx, cpy);
-        context.stroke();
-        context.restore()
-    }
-
-    drawRect(cpx, cpy, context) {
-        context.save()
-        context.fillStyle = "rgba(255, 0, 0, 1)"
-        context.fillRect(cpx - 5, cpy - 5, 10, 10)
-        context.restore()
-    }
-
-    radiusCircle(x, y) {
-        let diffX = this.origX - x;
-        let diffY = this.origY - y;
-        let radiusSquare = Math.pow(diffX, 2) + Math.pow(diffY, 2);
-        let radius = Math.pow(radiusSquare, 0.5);
-        return radius;
     }
 }

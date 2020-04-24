@@ -29,7 +29,7 @@ class DrawingLine extends PaintFunction{
     }
 
     onMouseMove(){}
-    onMouseUp(){
+    onMouseUp(coord,event){
         let canvasPic = new Image();
         canvasPic.src = canvasDraft.toDataURL()
         canvasPic.onload = function () { 

@@ -4,15 +4,28 @@
     top:0px;
     bottom:0px;
     left:0px;
-    right:0px
+    right:0px;
+}
+
+.canvas-zoom{
+    border: 0;
+    top:-720px;
+    left:-1280px;
+    z-index: -1
 }
 
 #canvas-draft{
     background-color: transparent;
 }
+
 body{
     overflow:hidden;
 }
+
 #canvas-container{
     height:720px;
-}  
+}
+/* 
+.buttons .btn{
+    z-index: 1;
+} */
