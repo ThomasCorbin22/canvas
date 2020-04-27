@@ -4,7 +4,11 @@ $('#welcome').click(function(){
 
     $('#title').html('Welcome To Our Canvas App')
     $('#subtitle').html(' - Christine & Thomas - ')
-    $('#howToUse').html('This is a project that we worked on from 20/04/20 until the 28/04/20.<br>Click the tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.')
+    $('#howToUse').html('This is a project that we created together at Xccelerate.<br>Click the tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.')
+
+    $('#stamps').css('display', 'none')
+    $('#slider').css('display', 'none')
+    $('#chooseCurve').css('display', 'none')
 })
 
 $('#default').click(function(){
@@ -30,7 +34,11 @@ $('#default').click(function(){
 
     $('#title').html('Default')
     $('#subtitle').html('Here are some general tools')
-    $('#howToUse').html('')
+    $('#howToUse').html('Click one and let\'s get started!')
+
+    $('#stamps').css('display', 'none')
+    $('#slider').css('display', 'none')
+    $('#chooseCurve').css('display', 'none')
 })
 
 $('#lines').click(function(){
@@ -56,7 +64,11 @@ $('#lines').click(function(){
 
     $('#title').html('Lines')
     $('#subtitle').html('Here are some line tools')
-    $('#howToUse').html('')
+    $('#howToUse').html('Click one and let\'s get started!')
+
+    $('#stamps').css('display', 'none')
+    $('#slider').css('display', 'none')
+    $('#chooseCurve').css('display', 'none')
 })
 
 $('#shapes').click(function(){
@@ -81,7 +93,11 @@ $('#shapes').click(function(){
 
     $('#title').html('Shapes')
     $('#subtitle').html('Here are some shape tools')
-    $('#howToUse').html('')
+    $('#howToUse').html('Click one and let\'s get started!')
+
+    $('#stamps').css('display', 'none')
+    $('#slider').css('display', 'none')
+    $('#chooseCurve').css('display', 'none')
 })
 
 $('#filters').click(function(){
@@ -107,7 +123,11 @@ $('#filters').click(function(){
 
     $('#title').html('Filters')
     $('#subtitle').html('Here are some filters')
-    $('#howToUse').html('')
+    $('#howToUse').html('Click one and let\'s get started!')
+
+    $('#stamps').css('display', 'none')
+    $('#slider').css('display', 'none')
+    $('#chooseCurve').css('display', 'none')
 })
 
 $('#utilities').click(function(){
@@ -122,16 +142,20 @@ $('#utilities').click(function(){
     $("#label-01").html('Undo')
     $("#button-02").addClass('flaticon-redo')
     $("#label-02").html('Redo')
-    $("#button-03").addClass('flaticon-zoom-in')
-    $("#label-03").html('Zoom In')
-    $("#button-04").addClass('flaticon-zoom-out')
-    $("#label-04").html('Zoom Out')
-    $("#button-05").addClass('flaticon-floppy-disk')
-    $("#label-05").html('Save')
+    $("#button-03").addClass('flaticon-floppy-disk')
+    $("#label-03").html('Save')
+    $("#button-04").addClass('flaticon-zoom-in')
+    $("#label-04").html('Zoom In')
+    $("#button-05").addClass('flaticon-zoom-out')
+    $("#label-05").html('Zoom Out')
     $("#button-06").addClass('flaticon-close')
     $("#label-06").html('Clear')
 
     $('#title').html('Utilities')
     $('#subtitle').html('Here are some utilities')
-    $('#howToUse').html('')
+    $('#howToUse').html('Click one and let\'s get started!')
+
+    $('#stamps').css('display', 'none')
+    $('#slider').css('display', 'none')
+    $('#chooseCurve').css('display', 'none')
 })

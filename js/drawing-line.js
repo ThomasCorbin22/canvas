@@ -6,6 +6,8 @@ class DrawingLine extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
+        this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+        
         this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;

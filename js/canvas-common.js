@@ -7,7 +7,7 @@ $('#canvas-draft').attr('height', `${canvasHeight}px`)
 $('#canvas-select').attr('width', `${canvasWidth}px`)
 $('#canvas-select').attr('height', `${canvasHeight}px`)
 
-$('#canvas-container').css('height', `${windowHeight - 200}`)
+$('#canvas-container').css('height', `${canvasHeight}`)
 
 $('#canvas-select').hide()
 

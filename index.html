@@ -37,11 +37,54 @@
                 </div>
 
                 <div id='description' class="row d-block flex-grow-1">
+
                     <h1 id='title'>Welcome To Our Canvas App</h1>
                     <h3 id='subtitle'> - Christine & Thomas - </h3>
-                    <p id='howToUse'>This is a project that we worked on from 20/04/20 until the 28/04/20.<br>Click the
-                        tabs above to
-                        check out the various tools. Descriptions of how to use each tool will pop up here.</p>
+                    <p id='howToUse'>This is a project that we created together at Xccelerate.<br>Click the
+                        tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.</p>
+
+                    <div id='slider' class="justify-content-center my-2">
+                        <div class="w-100">
+                            <input type="range" class="custom-range" id="customRange" step="1" min="0" max="5"
+                                value="1">
+                        </div>
+                        <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+                    </div>
+
+                    <div id="stamps" class='justify-content-center align-items-center flex-wrap'>
+                        <img class='stamp-img' src="./images/stickerpack/abstractCircle.png" alt="Abstract Circle">
+                        <img class='stamp-img' src="./images/stickerpack/alapproved.png" alt="All Aproved">
+                        <img class='stamp-img' src="./images/stickerpack/banana.png" alt="Banana">
+                        <img class='stamp-img' src="./images/stickerpack/doubletick.png" alt="Double Tick">
+                        <img class='stamp-img' src="./images/stickerpack/eyesleft.png" alt="Eyes Left">
+                        <img class='stamp-img' src="./images/stickerpack/fullhp.png" alt="Full HP">
+                        <img class='stamp-img' src="./images/stickerpack/greenpepper.png" alt="Green Pepper">
+                        <img class='stamp-img' src="./images/stickerpack/laughwithtears.png" alt="Laughing">
+                        <img class='stamp-img' src="./images/stickerpack/letsgotravel.png" alt="Let\'s go travel">
+                        <img class='stamp-img' src="./images/stickerpack/loveit.png" alt="Love it">
+                        <img class='stamp-img' src="./images/stickerpack/lowhp.png" alt="Low HP">
+                        <img class='stamp-img' src="./images/stickerpack/orangepepper.png" alt="Orange Pepper">
+                        <img class='stamp-img' src="./images/stickerpack/porkbun.png" alt="Pork Bun">
+                        <img class='stamp-img' src="./images/stickerpack/siumai.png" alt="Siumai">
+                        <img class='stamp-img' src="./images/stickerpack/target.png" alt="Target">
+                        <img class='stamp-img' src="./images/stickerpack/withouteyes.png" alt="Without Eyes">
+                        <img class='stamp-img' src="./images/stickerpack/yellowbus.png" alt="Yellow Bus">
+                        <img class='stamp-img' src="./images/stickerpack/yellowbus.png" alt="Yellow Bus">
+                    </div>
+
+                    <div id="chooseCurve">
+                        <span id='quadratic' class="btn btn-light btn-curve flaticon-curve-line">
+                            <div class="overlay d-flex justify-content-center align-items-center">
+                                <p class="m-0 label-icons">Quadratic</p>
+                            </div>
+                        </span>
+                        <span id='bezier' class="btn btn-light btn-curve flaticon-line">
+                            <div class="overlay d-flex justify-content-center align-items-center">
+                                <p class="m-0 label-icons">Bezier</p>
+                            </div>
+                        </span>
+                    </div>
+
                 </div>
 
                 <div id='icons' class="row justify-content-center">
@@ -172,6 +215,8 @@
                     height='2160px'></canvas>
                 <canvas id="canvas-zoom-select" class="canvas canvas-zoom drawing-canvas" width='3840px'
                     height='2160px'></canvas>
+
+                <textarea name="textBox" id="textBox" class="text-style" cols="8" rows="2"></textarea>
             </div>
         </div>
     </div>
@@ -243,6 +288,7 @@
     <script type='text/javascript' src="js/toolbar-button-04.js"></script>
     <script type='text/javascript' src="js/toolbar-button-05.js"></script>
     <script type='text/javascript' src="js/toolbar-button-06.js"></script>
+    <script type='text/javascript' src="js/toolbar-other-buttons.js"></script>
 
     <script type='text/javascript'>
         currentFunction = new DrawingRectangle(contextReal, contextDraft);

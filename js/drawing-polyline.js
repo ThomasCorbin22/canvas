@@ -36,6 +36,8 @@ class DrawingPolyline extends PaintFunction{
         this.contextReal.lineWidth = curWidth;
 
         if (this.clickNum === 0) {
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            
             this.XY = [ [coord[0], coord[1]] ];
             this.clickNum++
             drawing = true
