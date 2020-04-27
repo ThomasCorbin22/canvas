@@ -1,7 +1,3 @@
-$('#drawing-bezier').click(()=>{
-    currentFunction = new DrawingBezier(contextReal,contextDraft);
-});
-
 class DrawingBezier extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();

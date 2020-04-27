@@ -1,7 +1,3 @@
-$('#drawing-move').click(() => {
-    currentFunction = new DrawingMove(contextReal,contextDraft,contextSelect);
-});
-
 class DrawingMove extends PaintFunction{
     constructor(contextReal, contextDraft, contextSelect){
         super();

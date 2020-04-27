@@ -1,7 +1,3 @@
-$('#drawing-zoomIn').click(() => {
-    currentFunction = new DrawingZoomIn(contextReal,contextDraft);
-});
-
 class DrawingZoomIn extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();

@@ -1,7 +1,3 @@
-$('#drawing-straight').click(()=>{
-    currentFunction = new DrawingStraightLine(contextReal,contextDraft);
-});
-
 class DrawingStraightLine extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();

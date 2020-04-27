@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 26/04/2020 16:34
+    Creation date: 27/04/2020 05:20
     */
 
     @font-face {
@@ -64,7 +64,15 @@
 .flaticon-curve-line:before { content: "\f118"; }
 .flaticon-blur:before { content: "\f119"; }
 .flaticon-contrast:before { content: "\f11a"; }
-.flaticon-sun:before { content: "\f11b"; }
+.flaticon-font-1:before { content: "\f11b"; }
+.flaticon-dashed-line:before { content: "\f11c"; }
+.flaticon-image:before { content: "\f11d"; }
+.flaticon-sun:before { content: "\f11e"; }
+.flaticon-change:before { content: "\f11f"; }
+.flaticon-drop:before { content: "\f120"; }
+.flaticon-stop:before { content: "\f121"; }
+.flaticon-rounded-black-square-shape:before { content: "\f122"; }
+.flaticon-menu:before { content: "\f123"; }
     
     $font-Flaticon-square: "\f100";
     $font-Flaticon-move: "\f101";
@@ -93,4 +101,12 @@
     $font-Flaticon-curve-line: "\f118";
     $font-Flaticon-blur: "\f119";
     $font-Flaticon-contrast: "\f11a";
-    $font-Flaticon-sun: "\f11b";
+    $font-Flaticon-font-1: "\f11b";
+    $font-Flaticon-dashed-line: "\f11c";
+    $font-Flaticon-image: "\f11d";
+    $font-Flaticon-sun: "\f11e";
+    $font-Flaticon-change: "\f11f";
+    $font-Flaticon-drop: "\f120";
+    $font-Flaticon-stop: "\f121";
+    $font-Flaticon-rounded-black-square-shape: "\f122";
+    $font-Flaticon-menu: "\f123";

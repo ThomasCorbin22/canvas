@@ -1,8 +1,3 @@
-$('#drawing-invert').click(()=>{
-    applyFilter(invert)
-    cPush()
-});
-
 function invert(data, index) {
     let brightRed = 255 - data[index]
     let brightGreen = 255 - data[index + 1]

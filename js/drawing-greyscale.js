@@ -1,8 +1,3 @@
-$('#drawing-greyscale').click(()=>{
-    applyFilter(greyScale)
-    cPush()
-});
-
 function greyScale(data, index) {
     let grey = 0
 

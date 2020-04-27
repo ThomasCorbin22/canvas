@@ -1,7 +1,3 @@
-$('#drawing-polygon').click(()=>{
-    currentFunction = new DrawingPolygon(contextReal,contextDraft);
-});
-
 class DrawingPolygon extends PaintFunction{
     constructor(contextReal){
         super();

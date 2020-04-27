@@ -1,4 +1,4 @@
-$('#drawing-save').click(() => {
+function save(){
     let downloadLink = document.createElement('a');
     downloadLink.setAttribute('download', 'CanvasAsImage.png');
 
@@ -7,4 +7,4 @@ $('#drawing-save').click(() => {
         downloadLink.setAttribute('href', url);
         downloadLink.click();
     });
-});
+}

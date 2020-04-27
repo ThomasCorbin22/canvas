@@ -1,7 +1,3 @@
-$('#drawing-fill-bucket').click(() => {
-    currentFunction = new DrawingFillBucket(contextReal, contextDraft);
-});
-
 class DrawingFillBucket extends PaintFunction {
     constructor(contextReal, contextDraft) {
         super();

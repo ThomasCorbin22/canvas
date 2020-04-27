@@ -1,5 +1,5 @@
-$('#drawing-zoomOut').click(() => {
-    if (zoomIn === true){
+function drawingZoomOut() {
+    if (zoomIn === true) {
         canvasReal = document.getElementById('canvas-real');
         contextReal = canvasReal.getContext('2d');
         canvasDraft = document.getElementById('canvas-draft');
@@ -8,11 +8,11 @@ $('#drawing-zoomOut').click(() => {
         windowWidth = windowWidth / 3;
         windowHeight = windowWidth / 3;
 
-        contextReal.drawImage(canvasZoomReal,zoomX,zoomY,canvasWidth * 2,canvasHeight * 2,0,0,canvasWidth,canvasHeight)
+        contextReal.drawImage(canvasZoomReal, zoomX, zoomY, canvasWidth * 2, canvasHeight * 2, 0, 0, canvasWidth, canvasHeight)
 
         contextZoomReal.clearRect(0, 0, contextZoomReal.canvas.width, contextZoomReal.canvas.height);
         contextZoomDraft.clearRect(0, 0, contextZoomReal.canvas.width, contextZoomReal.canvas.height);
-        
+
         $('#canvas-zoom-real').hide()
         $('#canvas-zoom-draft').hide()
         $('#canvas-real').show()
@@ -24,4 +24,4 @@ $('#drawing-zoomOut').click(() => {
         zoomIn = false
         cPush()
     }
-});
+}

@@ -1,7 +1,3 @@
-$('#drawing-eraser').click(()=>{
-    currentFunction = new DrawingEraser(contextReal,contextDraft);
-});
-
 class DrawingEraser extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();
