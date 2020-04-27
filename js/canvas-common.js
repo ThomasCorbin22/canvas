@@ -4,7 +4,12 @@ $('#canvas-real').attr('height', `${canvasHeight}px`)
 $('#canvas-draft').attr('width', `${canvasWidth}px`)
 $('#canvas-draft').attr('height', `${canvasHeight}px`)
 
+$('#canvas-select').attr('width', `${canvasWidth}px`)
+$('#canvas-select').attr('height', `${canvasHeight}px`)
+
 $('#canvas-container').css('height', `${windowHeight - 200}`)
+
+$('#canvas-select').hide()
 
 $(document).keydown(function (e) {
     if (e.key === "Enter" || e.key === "Escape") {
@@ -12,14 +17,14 @@ $(document).keydown(function (e) {
     }
 });
 
-$('#canvas-draft').mousedown(function(e){
+$('.drawing-canvas').mousedown(function(e){
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     currentFunction.onMouseDown([mouseX,mouseY],e);
     dragging = true;
 });
 
-$('#canvas-draft').mousemove(function(e){
+$('.drawing-canvas').mousemove(function(e){
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     if(dragging){
@@ -28,21 +33,21 @@ $('#canvas-draft').mousemove(function(e){
     currentFunction.onMouseMove([mouseX,mouseY],e);
 });
 
-$('#canvas-draft').mouseup(function(e){
+$('.drawing-canvas').mouseup(function(e){
     dragging = false;
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     currentFunction.onMouseUp([mouseX,mouseY],e);
 });
 
-$('#canvas-draft').mouseleave(function(e){
+$('.drawing-canvas').mouseleave(function(e){
     dragging = false;
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     currentFunction.onMouseLeave([mouseX,mouseY],e);
 });
 
-$('#canvas-draft').mouseenter(function(e){
+$('.drawing-canvas').mouseenter(function(e){
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     currentFunction.onMouseEnter([mouseX,mouseY],e);

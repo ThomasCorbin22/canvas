@@ -4,6 +4,21 @@ let contextReal = canvasReal.getContext('2d');
 let canvasDraft = document.getElementById('canvas-draft');
 let contextDraft = canvasDraft.getContext('2d');
 
+let canvasSelect = document.getElementById('canvas-select');
+let contextSelect = canvasDraft.getContext('2d');
+
+let canvasZoomReal = document.getElementById('canvas-zoom-real');
+let contextZoomReal = canvasZoomReal.getContext('2d');
+
+let canvasZoomDraft = document.getElementById('canvas-zoom-draft');
+let contextZoomDraft = canvasZoomDraft.getContext('2d');
+
+let canvasZoomSelect = document.getElementById('canvas-zoom-select');
+let contextZoomSelect = canvasZoomSelect.getContext('2d');
+
+let zoomX = 0
+let zoomY = 0
+
 let windowWidth = $(window).width();
 let windowHeight = $(window).height();
 
@@ -27,13 +42,6 @@ let zoomOut = true
 let cPushArray = new Array();
 let cStep = -1;
 
-// For marching ants in Selection
-// let selActive = false
-// let selOrigX = 0
-// let selOrigY = 0
-// let selWidth = 0
-// let selHeight = 0
-
 let blurAmt = 3;
 let brightAmt = 30;
 let constrastAmt = 1.4;
@@ -47,4 +55,10 @@ let currentFunction;
 let dragging = false;
 let drawing = false
 
-let points;
+let points
+
+let selecting = false
+let selectX = 0
+let selectY = 0
+let selectWidth = canvasWidth
+let selectHeight = canvasHeight

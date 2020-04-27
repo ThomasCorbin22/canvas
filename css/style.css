@@ -11,7 +11,6 @@
     border: 0;
     top:-720px;
     left:-1280px;
-    z-index: -1
 }
 
 #canvas-draft{
@@ -25,7 +24,8 @@ body{
 #canvas-container{
     height:720px;
 }
-/* 
-.buttons .btn{
-    z-index: 1;
-} */
+
+#buttons{
+    position: relative;
+    z-index: 6;
+}

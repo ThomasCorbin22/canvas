@@ -1,12 +1,13 @@
 $('#drawing-move').click(() => {
-    currentFunction = new DrawingMove(contextReal,contextDraft);
+    currentFunction = new DrawingMove(contextReal,contextDraft,contextSelect);
 });
 
 class DrawingMove extends PaintFunction{
-    constructor(contextReal, contextDraft){
+    constructor(contextReal, contextDraft, contextSelect){
         super();
         this.contextReal = contextReal;            
         this.contextDraft = contextDraft; 
+        this.contextSelect = contextSelect; 
         this.clickNum = 0               
     }
     
@@ -14,73 +15,60 @@ class DrawingMove extends PaintFunction{
     onDragging(){}
     onMouseMove(coord, event){
         if (this.clickNum != 0 && drawing === false){
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+
+            if (selecting === false){
+                this.contextReal.clearRect(0,0,canvasReal.width,canvasReal.height);
+            }
+            
+            contextReal.drawImage(canvasDraft,0,0,canvasWidth,canvasHeight,0,0,canvasWidth,canvasHeight)
+
             this.clickNum = 0
             $('#canvas-real').show()
+            selecting = false
+            selectX = 0
+            selectY = 0
+            selectWidth = canvasWidth
+            selectHeight = canvasHeight
+            cPush()
         }
-        else if (this.clickNum != 0){
+        else if (this.clickNum % 2 === 1){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+            
+            if (selecting === true) {
+                this.contextDraft.save()
+                this.contextDraft.fillStyle = "rgba(255, 255, 255, 1)"
+                this.contextDraft.fillRect(selectX,selectY,selectWidth,selectHeight);
+                this.contextDraft.restore()
+            }
 
-            contextDraft.drawImage(
-                //Element to draw to draftCanvas
-                canvasReal, 
-                // X-axis coordinate of the realCanvas to draw from
-                0,
-                // Y-axis coordinate of the realCanvas to draw from
-                0,
-                // Width of the realCanvas to draw from
-                canvasWidth, 
-                // Height of the realCanvas to draw from
-                canvasHeight, 
-                // X-axis coordinate of the draftCanvas to draw to
-                coord[0] - this.origX, 
-                // Y-axis coordinate of the draftCanvas to draw to
-                coord[1] - this.origY, 
-                // Width to draw the image on the draftCanvas
-                canvasWidth,
-                // Height to draw the image on the draftCanvas
-                canvasHeight
-            )
+            contextDraft.drawImage(canvasReal,selectX,selectY,selectWidth,selectHeight,coord[0] - this.origX + selectX,coord[1] - this.origY + selectY,selectWidth,selectHeight)
         }
     }
     onMouseUp(coord,event){
         if (this.clickNum === 0) {
             this.origX = coord[0];
             this.origY = coord[1];
-            this.clickNum++
             drawing = true
-            $('#canvas-real').hide()
+            if (selecting === false){
+                $('#canvas-real').hide()
+            }
         }
 
-        else if (this.clickNum === 1) {
-            this.contextReal.clearRect(0,0,canvasReal.width,canvasReal.height);
+        else if (this.clickNum % 2 === 1) {
 
-            contextReal.drawImage(
-                //Element to draw to realCanvas
-                canvasDraft, 
-                // X-axis coordinate of the draftCanvas to draw from
-                0,
-                // Y-axis coordinate of the draftCanvas to draw from
-                0,
-                // Width of the draftCanvas to draw from
-                canvasWidth, 
-                // Height of the draftCanvas to draw from
-                canvasHeight, 
-                // X-axis coordinate of the realCanvas to draw to
-                0, 
-                // Y-axis coordinate of the realCanvas to draw to
-                0, 
-                // Width to draw the image on the realCanvas
-                canvasWidth,
-                // Height to draw the image on the realCanvas
-                canvasHeight
-            )
+            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.width);
-            this.clickNum = 0
-            $('#canvas-real').show()
-            cPush()
+            if (selecting === true) {
+                this.contextDraft.save()
+                this.contextDraft.fillStyle = "rgba(255, 255, 255, 1)"
+                this.contextDraft.fillRect(selectX,selectY,selectWidth,selectHeight);
+                this.contextDraft.restore()
+            }
+
+            contextDraft.drawImage(canvasReal,selectX,selectY,selectWidth,selectHeight,coord[0] - this.origX + selectX,coord[1] - this.origY + selectY,selectWidth,selectHeight)
         }
+        
+        this.clickNum++
     }
     onMouseLeave(){}
     onMouseEnter(){}
