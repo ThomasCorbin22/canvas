@@ -97,6 +97,21 @@ h3 {
     z-index: 1;
 }
 
+/* style for the slider */
+.rangeslider{
+    width: 50%;
+    }
+.myslider {
+    -webkit-appearance: none;
+    background: #FCF3CF  ;
+    width: 50%;
+    height: 20px;
+    opacity: 2;
+   }
+.myslider:hover {
+opacity: 1;
+}
+
 .overlay {
     opacity: 0;
     transition: 1s ease;

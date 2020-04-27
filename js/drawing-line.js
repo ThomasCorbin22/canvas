@@ -9,6 +9,10 @@ class DrawingLine extends PaintFunction {
         this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
+        this.contextDraft.lineJoin = curJoin;
+        this.contextDraft.lineCap = lineCap;
+        this.contextDraft.setLineDash(linetype);
+        
         drawing = true
 
         this.contextDraft.beginPath();

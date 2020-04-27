@@ -40,9 +40,7 @@ const strokepickr = Pickr.create({
 }); 
 
 strokepickr.on('change', (color, instance) => {
-    console.log(color.toRGBA().toString());
     const rgbaColorStroke = color.toRGBA().toString();
-    console.log(rgbaColorStroke);
     curStroke = rgbaColorStroke;
  
 });

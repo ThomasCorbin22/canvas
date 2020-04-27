@@ -39,7 +39,8 @@
                 <div id='description' class="row d-block flex-grow-1">
                     <h1 id='title'>Welcome To Our Canvas App</h1>
                     <h3 id='subtitle'> - Christine & Thomas - </h3>
-                    <p id='howToUse'>This is a project that we worked on from 20/04/20 until the 28/04/20.<br>Click the tabs above to
+                    <p id='howToUse'>This is a project that we worked on from 20/04/20 until the 28/04/20.<br>Click the
+                        tabs above to
                         check out the various tools. Descriptions of how to use each tool will pop up here.</p>
                 </div>
 
@@ -127,24 +128,37 @@
                     <!-- fontsize selector -->
                     <label for="font-select">Select the Font Size:</label>
                     <select id="font-select" onchange="setfontpixel()">
-                        <option value="20px Ariel">small</option>
-                        <option value="50px Ariel" selected="selected">medium</option>
-                        <option value="70px Ariel">large</option>
+                        <option value="20px Ariel">Small</option>
+                        <option value="50px Ariel" selected="selected">Medium</option>
+                        <option value="70px Ariel">Large</option>
                     </select>
                     <!-- line type selector -->
                     <label for="linetype-select">Select the Line Type:</label>
-                    <select id="linetype-select">
-                        <option value="">N/A</option>
-                        <option value="" selected="selected">N/A</option>
-                        <option value="">N/A</option>
+                    <select id="linetype-select" onchange="setlinetype()">
+                        <option value="Normal" selected="selected">Normal</option>
+                        <option value="Dotted">Dotted</option>
                     </select>
                     <!-- line cap selector -->
                     <label for="linecap-select">Select the Line Cap:</label>
-                    <select id="linecap-select">
-                        <option value="butt">BUTT</option>
-                        <option value="round" selected="selected">ROUND</option>
-                        <option value="square">SQUARE</option>
+                    <select id="linecap-select" onchange="setlinecap()">
+                        <option value="butt">Butt</option>
+                        <option value="round" selected="selected">Round</option>
+                        <option value="square">square</option>
                     </select>
+                    <!-- stamp selector -->
+                    <label for="stamp-select">Select the stamp:</label>
+                    <select id="stamp-select" onchange="setlinecap()">
+                        <option value="butt">Butt</option>
+                        <option value="round" selected="selected">Round</option>
+                        <option value="square">square</option>
+                    </select>
+                    <!-- rangeslider -->
+                    <div class="rangeslider">
+                        <label for="rangeslider">Size Range:</label>
+                        <input type="range" min="0.5" max="2" step="0.5" value="1" class="myslider" id="sliderRange"
+                            oninput="setStampScale()">
+                        <p>Value: <span id="demo"></span></p>
+                    </div>
                 </div>
             </div>
 
@@ -165,7 +179,7 @@
 
 
     <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smartline" title="Smartline">Smartline</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div>     -->
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
