@@ -341,14 +341,8 @@ function paintBucketFill(coord, context) {
 
     let imgData = context.getImageData(0, 0, canvasWidth, canvasHeight);
 
-    // console.log(imgData)
-    // console.log(imgData.data[0])
-
     let pixelData = context.getImageData(coord[0], coord[1], 1, 1);
     let pixelStack = [coord];
-
-    // console.log('Co-ordinations: ' + coord)
-    // console.log(typeof coord)
 
     let startR = pixelData.data[0]
     let startG = pixelData.data[1]
@@ -356,10 +350,6 @@ function paintBucketFill(coord, context) {
 
     let curFillRGBA = curFill.replace(/\s+/g, '').split('(')[1].split(')')[0].split(',')
 
-    // console.log(curFillRGBA)
-    // console.log('Start R: ' + startR)
-    // console.log('Start G: ' + startG)
-    // console.log('Start B: ' + startB)
 
     while (pixelStack.length) {
         newPos = pixelStack.pop();
@@ -368,11 +358,6 @@ function paintBucketFill(coord, context) {
 
         // Get current pixel position
         pixelPos = (y * canvasWidth + x) * 4;
-
-        // console.log('Pixel Position: ' + pixelPos)
-        // console.log('X: ' + x)
-        // console.log('Y: ' + y)
-        // console.log('MatchStartColor: ' + matchStartColour(pixelPos, startR, startG, startB, imgData))
 
         // Go up the page as long as the colour matches
         while (y >= 0 && matchStartColour(pixelPos, startR, startG, startB, imgData)) {
@@ -385,22 +370,11 @@ function paintBucketFill(coord, context) {
         reachLeft = false;
         reachRight = false;
 
-        // console.log('Found top position')
-        // console.log('Pixel Position: ' + pixelPos)
-        // console.log('Y: ' + y)
-
         // Go down the page as long as the colour matches and is in the canvas
         while (y <= canvasHeight -1 && matchStartColour(pixelPos, startR, startG, startB, imgData)) {
             y++
 
             colorPixel(pixelPos, imgData, curFillRGBA);
-
-            // console.log('Pixel Position: ' + pixelPos)
-            // console.log('Y: ' + y)
-            // console.log('Img Data: ' + imgData)
-            // console.log('R: ' + imgData.data[pixelPos])
-            // console.log('G: ' + imgData.data[pixelPos + 1])
-            // console.log('B: ' + imgData.data[pixelPos + 2])
 
             if (pixelPos === undefined || imgData.data[pixelPos] === undefined){
                 y = canvasHeight
