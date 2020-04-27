@@ -187,9 +187,9 @@ function sepia(data, index) {
     let greenDiff = data[index + 1] - sepiaGreen
     let blueDiff = data[index + 2] - sepiaBlue
 
-    sepiaRed = data[index] - redDiff * sliderNum
-    sepiaGreen = data[index + 1] - greenDiff * sliderNum
-    sepiaBlue = data[index + 2] - blueDiff * sliderNum
+    sepiaRed -= redDiff * sliderNum
+    sepiaGreen -= greenDiff * sliderNum
+    sepiaBlue -= blueDiff * sliderNum
 
     // Check to see if any values exceed limits
     if (sepiaRed > 255) {

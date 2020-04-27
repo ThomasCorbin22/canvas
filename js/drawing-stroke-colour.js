@@ -1,7 +1,7 @@
 const strokepickr = Pickr.create({
-    el: '.Strokecolor-picker', //element use for the square thing that will pop up in
+    // el: '.Strokecolor-picker', //element use for the square thing that will pop up in
+    el: '#pstrokecolour',
     theme: 'classic', // or 'monolith', or 'nano'
-    default: 'rgba(50, 50, 50, 1)',
     
     swatches: [
         //sample colour selection
@@ -24,7 +24,7 @@ const strokepickr = Pickr.create({
     components: {
 
         // Main components
-        preview: true,
+        // preview: true,
         opacity: true,
         hue: true,
 
@@ -33,15 +33,16 @@ const strokepickr = Pickr.create({
             hex: true,
             rgba: true,
             input: true,
-            save:true,
-            clear: true,
+            // save:true,
+            // clear: true,
         }
     }
 }); 
 
 strokepickr.on('change', (color, instance) => {
     const rgbaColorStroke = color.toRGBA().toString();
+    console.log(rgbaColorStroke)
     curStroke = rgbaColorStroke;
- 
+    $('.flaticon-stop').css('color', `${curStroke}`)
 });
 

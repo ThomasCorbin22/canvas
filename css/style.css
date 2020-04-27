@@ -1,3 +1,23 @@
+/* Elements */
+
+body{
+    overflow:hidden;
+}
+
+
+h1 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 1.5rem
+}
+
+h3 {
+    margin-bottom: 24px;
+    font-size: 1rem
+}
+
+/* Classes */
+
 .canvas{
     border:1px rgba(0,0,0,1) dotted;
     position:absolute;
@@ -12,48 +32,6 @@
     border: 0;
     top:-720px;
     left:-1280px;
-}
-
-#canvas-draft{
-    background-color: transparent;
-}
-
-body{
-    overflow:hidden;
-}
-
-#canvas-container{
-    height:100vh;
-    padding: 0px
-}
-
-#buttons{
-    height: 100vh;
-    position: relative;
-    z-index: 6;
-}
-
-#description{
-    padding: 0px 15px
-}
-
-#icons{
-    display: none
-}
-
-h1 {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    font-size: 1.5rem
-}
-
-h3 {
-    margin-bottom: 24px;
-    font-size: 1rem
-}
-
-#howToUse {
-    font-size: .8rem
 }
 
 .btn-icons {
@@ -79,6 +57,16 @@ h3 {
     font-weight: 500;
     font-size: 0.7rem;
     background-color: rgba(255, 255, 255, 1)
+}
+
+.btn-drop {
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 1)
+}
+
+.btn-drop:focus {
+    background-color: rgba(235, 235, 235, 1)
 }
 
 .btn:before{
@@ -156,6 +144,69 @@ h3 {
     color: rgba(128,0,128,1);
 }
 
+
+.stamp-img{
+    width: 12%;
+    margin: 2%;
+    transition: .5s ease
+}
+
+.stamp-img:hover{
+    opacity: .2
+}
+
+.popup {
+    position:absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, .5);
+}
+
+.popup label{
+    color: rgba(255,255,255,1);
+    font-size: 1.5rem;
+    font-weight: 500
+}
+
+/* IDs */
+
+#canvas-draft{
+    background-color: transparent;
+}
+
+#canvas-container{
+    height:100vh;
+    padding: 0px
+}
+
+#buttons{
+    height: 100vh;
+    position: relative;
+    z-index: 6;
+}
+
+#description{
+    padding: 0px 15px
+}
+
+#icons{
+    display: none;
+    position: relative
+}
+
+
+#howToUse {
+    font-size: .8rem
+}
+
+
 #slider {
     display: none;
 }
@@ -166,14 +217,4 @@ h3 {
 
 #chooseCurve{
     display: none
-}
-
-.stamp-img{
-    width: 12%;
-    margin: 2%;
-    transition: .5s ease
-}
-
-.stamp-img:hover{
-    opacity: .2
 }

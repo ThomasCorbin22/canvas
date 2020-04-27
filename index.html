@@ -118,35 +118,70 @@
                             <p id='label-06' class="m-0 label-icons"></p>
                         </div>
                     </span>
+                    <div id="popup-line-width" class='popup'>
+                        <label for="width-select">Select the Line Width:</label>
+                        <select id="width-select" class='btn btn-light btn-drop'>
+                            <option value="5">Min</option>
+                            <option value="10">10px</option>
+                            <option value="20" selected="selected">20px</option>
+                            <option value="30">30px</option>
+                            <option value="40">40px</option>
+                            <option value="50">MAX</option>
+                        </select>
+                    </div>
+                    <div id="popup-font-size" class='popup'>
+                        <label for="font-select">Select the Font Size:</label>
+                        <select id="font-select" class='btn btn-light btn-drop'>
+                            <option value="20px Ariel">Small</option>
+                            <option value="50px Ariel" selected="selected">Medium</option>
+                            <option value="70px Ariel">Large</option>
+                        </select>
+                    </div>
+                    
+                    <div id="popup-linetype-select" class='popup'>
+                        <label for="linetype-select">Select the Line Type:</label>
+                        <select id="linetype-select" class='btn btn-light btn-drop'>
+                            <option value="Normal" selected="selected">Normal</option>
+                            <option value="Dotted">Dotted</option>
+                        </select>
+                    </div>
+                    <div id="popup-linecap-select" class='popup'>
+                        <label for="linecap-select">Select the Line Cap:</label>
+                        <select id="linecap-select" class='btn btn-light btn-drop' >
+                            <option value="butt">Butt</option>
+                            <option value="round" selected="selected">Round</option>
+                            <option value="square">Square</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div id='tools' class="row d-flex justify-content-center">
-                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-stop">
+                <div id='tools' class="row d-flex justify-content-center text-center">
+                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-stop p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Fill Colour</p>
+                            <p class="m-0 label-tools" id="pstrokecolour">Stroke Colour</p>
                         </div>
                     </span>
-                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape">
+                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Stroke Colour</p>
+                            <p class="m-0 label-tools" id="pfillcolour">Fill Colour</p>
                         </div>
                     </span>
-                    <span id='line-width' class="btn btn-light btn-tools flaticon-width">
+                    <span id='line-width' class="btn btn-light btn-tools flaticon-width p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Line Width</p>
                         </div>
                     </span>
-                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1">
+                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1 p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Font Size</p>
                         </div>
                     </span>
-                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu">
+                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Line Cap</p>
                         </div>
                     </span>
-                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line">
+                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Line Style</p>
                         </div>
@@ -154,55 +189,6 @@
                     <br>
                 </div>
 
-                <div class="d-none">
-                    <!-- Color control button  -->
-                    <span class="Strokecolor-picker"></span>
-                    <span class="Fillcolor-picker"></span>
-                    <!-- Strok selector -->
-                    <label for="width-select">Select the stroke width:</label>
-                    <select id="width-select" onchange="setstrokewidth()">
-                        <option value="1">1px</option>
-                        <option value="3">3px</option>
-                        <option value="5" selected="selected">5px</option>
-                        <option value="7">7px</option>
-                        <option value="9">9px</option>
-                        <option value="50">MAX</option>
-                    </select>
-                    <!-- fontsize selector -->
-                    <label for="font-select">Select the Font Size:</label>
-                    <select id="font-select" onchange="setfontpixel()">
-                        <option value="20px Ariel">Small</option>
-                        <option value="50px Ariel" selected="selected">Medium</option>
-                        <option value="70px Ariel">Large</option>
-                    </select>
-                    <!-- line type selector -->
-                    <label for="linetype-select">Select the Line Type:</label>
-                    <select id="linetype-select" onchange="setlinetype()">
-                        <option value="Normal" selected="selected">Normal</option>
-                        <option value="Dotted">Dotted</option>
-                    </select>
-                    <!-- line cap selector -->
-                    <label for="linecap-select">Select the Line Cap:</label>
-                    <select id="linecap-select" onchange="setlinecap()">
-                        <option value="butt">Butt</option>
-                        <option value="round" selected="selected">Round</option>
-                        <option value="square">square</option>
-                    </select>
-                    <!-- stamp selector -->
-                    <label for="stamp-select">Select the stamp:</label>
-                    <select id="stamp-select" onchange="setlinecap()">
-                        <option value="butt">Butt</option>
-                        <option value="round" selected="selected">Round</option>
-                        <option value="square">square</option>
-                    </select>
-                    <!-- rangeslider -->
-                    <div class="rangeslider">
-                        <label for="rangeslider">Size Range:</label>
-                        <input type="range" min="0.5" max="2" step="0.5" value="1" class="myslider" id="sliderRange"
-                            oninput="setStampScale()">
-                        <p>Value: <span id="demo"></span></p>
-                    </div>
-                </div>
             </div>
 
             <div id="canvas-container" class="col-9">
@@ -277,8 +263,6 @@
 
     <script type='text/javascript' src="js/drawing-fill-colour.js"></script>
     <script type='text/javascript' src="js/drawing-stroke-colour.js"></script>
-    <script type='text/javascript' src="js/drawing-stroke-width.js"></script>
-    <script type='text/javascript' src="js/drawing-font-pixel.js"></script>
 
     <script type='text/javascript' src="js/toolbar-tabs.js"></script>
     <script type='text/javascript' src="js/toolbar-tools.js"></script>

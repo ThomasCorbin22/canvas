@@ -22,8 +22,8 @@ let zoomY = 0
 let canvasWidth = Math.round($('#canvas-container').width());
 let canvasHeight = Math.round($('#canvas-container').height());
 
-let curStroke = "rgba(50, 50, 50, 1)"
-let curFill = "rgba(255, 150, 150, 1)"
+let curStroke = "rgba(255, 0, 0, 1)"
+let curFill = "rgba(128, 0, 128, 1)"
 let curFont = "50px Ariel"
 
 let curJoin = "round"
