@@ -1,94 +1,75 @@
 $('#fill-colour').click(() => {
-    $('.flaticon-stop').css('color',$(curFill))
+    $('#popup-font-size').removeClass('d-flex')
+    $('#popup-linecap-select').removeClass('d-flex')
+    $('#popup-linetype-select').removeClass('d-flex')
+    $('#popup-line-width').removeClass('d-flex')
 });
 
 $('#stroke-colour').click(() => {
-    $('.flaticon-rounded-black-square-shape').css('color', $(curStroke))
+    $('#popup-font-size').removeClass('d-flex')
+    $('#popup-linecap-select').removeClass('d-flex')
+    $('#popup-linetype-select').removeClass('d-flex')
+    $('#popup-line-width').removeClass('d-flex')
 });
 
 $('#line-width').click(() => {
-    $('#title').html('Line Width Selector')
-    $('#subtitle').html('Please select in the dropdown list below:')
-    $('#howToUse').html('From Minimum 5px to</br> Maximun 50px</br>By Default is 20px.')
-     $('.popup').css('display', 'flex')
-    console.log($(curWidth))
+    $('#popup-font-size').removeClass('d-flex')
+    $('#popup-linecap-select').removeClass('d-flex')
+    $('#popup-linetype-select').removeClass('d-flex')
 
-    //  if ($('.popup').css === ('display',"none"){
-    //$('.popup').css('display') = ("display","block");
-    // } else{
-    //   $('.popup').css('display') = ("display","none");
-    // }
+    $('#popup-line-width').toggleClass('d-flex')
 });
 
 $('#font-size').click(() => {
-    $('#title').html('Font Size Selector')
-    $('#subtitle').html('Please select in the dropdown list below:')
-    $('#howToUse').html('You can choose between Small/ Medium and Large font size.')
-    $('.popup').css('display', 'flex')
-       //  if ($('.popup').css === ('display',"none"){
-    //$('.popup').css('display') = ("display","block");
-    // } else{
-    //   $('.popup').css('display') = ("display","none");
-    // }
+    $('#popup-line-width').removeClass('d-flex')
+    $('#popup-linecap-select').removeClass('d-flex')
+    $('#popup-linetype-select').removeClass('d-flex')
+
+    $('#popup-font-size').toggleClass('d-flex')
 });
 
 $('#line-cap').click(() => {
-    $('#title').html('Line Cap Selector')
-    $('#subtitle').html('Please select in the dropdown list below:')
-    $('#howToUse').html('With a selection of Round/ Butted and Squared.')
-    $('.popup').css('display', 'flex')
-       //  if ($('.popup').css === ('display',"none"){
-    //$('.popup').css('display') = ("display","block");
-    // } else{
-    //   $('.popup').css('display') = ("display","none");
-    // }
+    $('#popup-line-width').removeClass('d-flex')
+    $('#popup-linetype-select').removeClass('d-flex')
+    $('#popup-font-size').removeClass('d-flex')
+
+    $('#popup-linecap-select').toggleClass('d-flex')
 });
 
 $('#line-style').click(() => {
-    $('#title').html('Line style Selector')
-    $('#subtitle').html('Please select in the dropdown list below:')
-    $('#howToUse').html('With a selection of Standard and Dotted Line.')
-    $('.popup').css('display', 'flex')
-       //  if ($('.popup').css === ('display',"none"){
-    //$('.popup').css('display') = ("display","block");
-    // } else{
-    //   $('.popup').css('display') = ("display","none");
-    // }
-    
+    $('#popup-line-width').removeClass('d-flex')
+    $('#popup-linecap-select').removeClass('d-flex')
+    $('#popup-font-size').removeClass('d-flex')
+
+    $('#popup-linetype-select').toggleClass('d-flex')
 });
 
 
-
-
-
-
-
-$('#width-select').on('input change'), () => {
+$('#width-select').change(() => {
     //setStrokeWidth
-    curWidth = $("#width-select").val();
-    console.log($(curWidth))
-}
+    curWidth = Number($("#width-select").val())
+    console.log(curWidth)
+})
 
-$('#font-size').on('input change'), () => {
+$('#font-select').change(() => {
     //setfontpixel
-    curFont = $("#font-size").val();
-    console.log($('#font-size'))
-}
+    curFont = $("#font-select").val();
+    console.log(curFont)
+})
 
-$('#font-size').on('input change'), () => {
-    //setfontpixel
-    curFont = $("#font-size").val();
-    console.log($('#font-size'))
-}
-
-$('#linecap-select').on('input change'), () => {
+$('#linetype-select').change(() => {
     //setlinetype
-    if (linetypeselect === 'Dotted'){
+    if ($("#linetype-select").val() === 'Dotted'){
         linetype = [5,10]
-        console.log('dotted')
     }
     else {
         linetype = []
-        console.log('normal')
     }
-}
+    console.log(linetype)
+})
+
+$('#linecap-select').change(() => {
+    //setfontpixel
+    lineCap = $("#linecap-select").val();
+    console.log(lineCap)
+})

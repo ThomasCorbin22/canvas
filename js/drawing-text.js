@@ -5,9 +5,13 @@ class DrawingText extends PaintFunction {
         this.contextDraft = contextDraft;
         this.clickNum = 0
     }
-    onMouseUp(coord, event){
+    onMouseUp(coord, event) {
 
-        if (this.clickNum !== 1){
+        if (this.clickNum !== 1) {
+            $('#textBox').css('display', 'block')
+
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+
             this.contextDraft.strokeStyle = curStroke;
             this.contextDraft.fillStyle = curFill;
             this.contextDraft.lineWidth = curWidth;
@@ -19,15 +23,16 @@ class DrawingText extends PaintFunction {
             textBox.style.left = this.origX + 'px';
             textBox.style.top = this.origY + 'px';
             textContent = textBox.value;
-            textBox.style['z-index'] = 6; 
+            textBox.style['z-index'] = 6;
             textBox.value = "";
 
-            this.contextDraft.fillText(textContent,this.origX,this.origY);
+            this.contextDraft.fillText(textContent, this.origX, this.origY);
             this.clickNum++
-
         }
 
-        else if (this.clickNum === 1){
+        else if (this.clickNum === 1) {
+            $('#textBox').css('display', '')
+
             this.contextReal.strokeStyle = curStroke;
             this.contextReal.fillStyle = curFill;
             this.contextReal.lineWidth = curWidth;
@@ -38,16 +43,14 @@ class DrawingText extends PaintFunction {
             textBox.value = "";
 
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            this.contextReal.fillText(textContent,this.origX,this.origY);
+            this.contextReal.fillText(textContent, this.origX, this.origY);
             this.clickNum = 0
-        
         }
-
     }
-    onMouseLeave(){}
-    onMouseEnter(){}
-    onDragging(){}
-    onMouseDown() {}
+    onMouseLeave() { }
+    onMouseEnter() { }
+    onDragging() { }
+    onMouseDown() { }
 }
 
 

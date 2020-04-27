@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/vendor/normalize.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/boilerplate.css">
-    <link rel="stylesheet" href="css/vendor/flaticon.css">
+    <link rel="stylesheet" href="css/vendor/flaticon/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
 
@@ -37,11 +37,54 @@
                 </div>
 
                 <div id='description' class="row d-block flex-grow-1">
+
                     <h1 id='title'>Welcome To Our Canvas App</h1>
                     <h3 id='subtitle'> - Christine & Thomas - </h3>
-                    <p id='howToUse'>This is a project that we worked on from 20/04/20 until the 28/04/20.<br>Click the
-                        tabs above to
-                        check out the various tools. Descriptions of how to use each tool will pop up here.</p>
+                    <p id='howToUse'>This is a project that we created together at Xccelerate.<br>Click the
+                        tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.</p>
+
+                    <div id='slider' class="justify-content-center my-2">
+                        <div class="w-100">
+                            <input type="range" class="custom-range" id="customRange" step="1" min="0" max="5"
+                                value="1">
+                        </div>
+                        <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+                    </div>
+
+                    <div id="stamps" class='justify-content-center align-items-center flex-wrap'>
+                        <img class='stamp-img' src="./images/stickerpack/abstractCircle.png" alt="Abstract Circle">
+                        <img class='stamp-img' src="./images/stickerpack/alapproved.png" alt="All Aproved">
+                        <img class='stamp-img' src="./images/stickerpack/banana.png" alt="Banana">
+                        <img class='stamp-img' src="./images/stickerpack/doubletick.png" alt="Double Tick">
+                        <img class='stamp-img' src="./images/stickerpack/eyesleft.png" alt="Eyes Left">
+                        <img class='stamp-img' src="./images/stickerpack/fullhp.png" alt="Full HP">
+                        <img class='stamp-img' src="./images/stickerpack/greenpepper.png" alt="Green Pepper">
+                        <img class='stamp-img' src="./images/stickerpack/laughwithtears.png" alt="Laughing">
+                        <img class='stamp-img' src="./images/stickerpack/letsgotravel.png" alt="Let\'s go travel">
+                        <img class='stamp-img' src="./images/stickerpack/loveit.png" alt="Love it">
+                        <img class='stamp-img' src="./images/stickerpack/lowhp.png" alt="Low HP">
+                        <img class='stamp-img' src="./images/stickerpack/orangepepper.png" alt="Orange Pepper">
+                        <img class='stamp-img' src="./images/stickerpack/porkbun.png" alt="Pork Bun">
+                        <img class='stamp-img' src="./images/stickerpack/siumai.png" alt="Siumai">
+                        <img class='stamp-img' src="./images/stickerpack/target.png" alt="Target">
+                        <img class='stamp-img' src="./images/stickerpack/withouteyes.png" alt="Without Eyes">
+                        <img class='stamp-img' src="./images/stickerpack/yellowbus.png" alt="Yellow Bus">
+                        <img class='stamp-img' src="./images/stickerpack/yellowbus.png" alt="Yellow Bus">
+                    </div>
+
+                    <div id="chooseCurve">
+                        <span id='quadratic' class="btn btn-light btn-curve flaticon-curve-line">
+                            <div class="overlay d-flex justify-content-center align-items-center">
+                                <p class="m-0 label-icons">Quadratic</p>
+                            </div>
+                        </span>
+                        <span id='bezier' class="btn btn-light btn-curve flaticon-line">
+                            <div class="overlay d-flex justify-content-center align-items-center">
+                                <p class="m-0 label-icons">Bezier</p>
+                            </div>
+                        </span>
+                    </div>
+
                 </div>
 
                 <div id='icons' class="row justify-content-center">
@@ -75,73 +118,70 @@
                             <p id='label-06' class="m-0 label-icons"></p>
                         </div>
                     </span>
-                    <div class="popup">
-                        <!-- ready -->
-                        <div id="popup-line-width">
-                            <label for="width-select">Select the Line Width:</label>
-                            <select id="width-select">
-                                <option value="5">Min</option>
-                                <option value="10">10px</option>
-                                <option value="20" selected="">20px</option>
-                                <option value="30">30px</option>
-                                <option value="40">40px</option>
-                                <option value="50">MAX</option>
-                            </select>
-                        </div>
-                        <div id="popup-font-size">
-                            <label for="font-select">Select the Font Size:</label>
-                            <select id="font-select">
-                                <option value="20px Ariel">Small</option>
-                                <option value="50px Ariel" selected="">Medium</option>
-                                <option value="70px Ariel">Large</option>
-                            </select>
-                        </div>
-                        
-                        <div id="popup-linetype-select">
-                            <label for="linetype-select">Select the Line Type:</label>
-                            <select id="linetype-select" >
-                                <option value="Normal" selected="selected">Normal</option>
-                                <option value="Dotted">Dotted</option>
-                            </select>
-                        </div>
-                        <div id="popup-linecap-select">
-                            <label for="linecap-select">Select the Line Cap:</label>
-                            <select id="linecap-select" >
-                                <option value="butt">Butt</option>
-                                <option value="round" selected="selected">Round</option>
-                                <option value="square">square</option>
-                            </select>
-                        </div>
-                    </div>    
+                    <div id="popup-line-width" class='popup'>
+                        <label for="width-select">Select the Line Width:</label>
+                        <select id="width-select" class='btn btn-light btn-drop'>
+                            <option value="5">Min</option>
+                            <option value="10">10px</option>
+                            <option value="20" selected="selected">20px</option>
+                            <option value="30">30px</option>
+                            <option value="40">40px</option>
+                            <option value="50">MAX</option>
+                        </select>
+                    </div>
+                    <div id="popup-font-size" class='popup'>
+                        <label for="font-select">Select the Font Size:</label>
+                        <select id="font-select" class='btn btn-light btn-drop'>
+                            <option value="20px Ariel">Small</option>
+                            <option value="50px Ariel" selected="selected">Medium</option>
+                            <option value="70px Ariel">Large</option>
+                        </select>
+                    </div>
+                    
+                    <div id="popup-linetype-select" class='popup'>
+                        <label for="linetype-select">Select the Line Type:</label>
+                        <select id="linetype-select" class='btn btn-light btn-drop'>
+                            <option value="Normal" selected="selected">Normal</option>
+                            <option value="Dotted">Dotted</option>
+                        </select>
+                    </div>
+                    <div id="popup-linecap-select" class='popup'>
+                        <label for="linecap-select">Select the Line Cap:</label>
+                        <select id="linecap-select" class='btn btn-light btn-drop' >
+                            <option value="butt">Butt</option>
+                            <option value="round" selected="selected">Round</option>
+                            <option value="square">Square</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div id='tools' class="row d-flex justify-content-center">
-                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-stop">
-                        <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools" id="pfillcolour">Fill Colour</p>
-                        </div>
-                    </span>
-                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape">
+                <div id='tools' class="row d-flex justify-content-center text-center">
+                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-stop p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools" id="pstrokecolour">Stroke Colour</p>
                         </div>
                     </span>
-                    <span id='line-width' class="btn btn-light btn-tools flaticon-width">
+                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape p-1">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools" id="pfillcolour">Fill Colour</p>
+                        </div>
+                    </span>
+                    <span id='line-width' class="btn btn-light btn-tools flaticon-width p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Line Width</p>
                         </div>
                     </span>
-                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1">
+                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1 p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Font Size</p>
                         </div>
                     </span>
-                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu">
+                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Line Cap</p>
                         </div>
                     </span>
-                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line">
+                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line p-1">
                         <div class="overlay d-flex justify-content-center align-items-center">
                             <p class="m-0 label-tools">Line Style</p>
                         </div>
@@ -149,46 +189,6 @@
                     <br>
                 </div>
 
-                <div class="d-none">
-                    <!-- Strok selector -->
-                    <!-- <label for="width-select">Select the stroke width:</label>
-                    <select id="width-select">
-                        <option value="1">1px</option>
-                        <option value="3">3px</option>
-                        <option value="5" selected="selected">5px</option>
-                        <option value="7">7px</option>
-                        <option value="9">9px</option>
-                        <option value="50">MAX</option>
-                    </select> -->
-                    <!-- fontsize selector -->
-                    <!-- <label for="font-select">Select the Font Size:</label>
-                    <select id="font-select" onchange="setfontpixel()">
-                        <option value="20px Ariel">Small</option>
-                        <option value="50px Ariel" selected="selected">Medium</option>
-                        <option value="70px Ariel">Large</option>
-                    </select> -->
-                    <!-- line type selector -->
-                    <!-- <label for="linetype-select">Select the Line Type:</label>
-                    <select id="linetype-select" onchange="setlinetype()">
-                        <option value="Normal" selected="selected">Normal</option>
-                        <option value="Dotted">Dotted</option> 
-                    </select>-->
-                    <!-- line cap selector -->
-                    <!-- <label for="linecap-select">Select the Line Cap:</label>
-                    <select id="linecap-select" onchange="setlinecap()">
-                        <option value="butt">Butt</option>
-                        <option value="round" selected="selected">Round</option>
-                        <option value="square">square</option>
-                    </select> -->
- 
-                    <!-- rangeslider -->
-                    <!-- <div class="rangeslider">
-                        <label for="rangeslider">Size Range:</label>
-                        <input type="range" min="0.5" max="2" step="0.5" value="1" class="myslider" id="sliderRange"
-                            oninput="setStampScale()">
-                        <p>Value: <span id="demo"></span></p>
-                    </div> -->
-                </div>
             </div>
 
             <div id="canvas-container" class="col-9">
@@ -201,6 +201,8 @@
                     height='2160px'></canvas>
                 <canvas id="canvas-zoom-select" class="canvas canvas-zoom drawing-canvas" width='3840px'
                     height='2160px'></canvas>
+
+                <textarea name="textBox" id="textBox" class="text-style" cols="8" rows="2"></textarea>
             </div>
         </div>
     </div>
@@ -261,8 +263,6 @@
 
     <script type='text/javascript' src="js/drawing-fill-colour.js"></script>
     <script type='text/javascript' src="js/drawing-stroke-colour.js"></script>
-    <script type='text/javascript' src="js/drawing-stroke-width.js"></script>
-    <script type='text/javascript' src="js/drawing-font-pixel.js"></script>
 
     <script type='text/javascript' src="js/toolbar-tabs.js"></script>
     <script type='text/javascript' src="js/toolbar-tools.js"></script>
@@ -272,6 +272,7 @@
     <script type='text/javascript' src="js/toolbar-button-04.js"></script>
     <script type='text/javascript' src="js/toolbar-button-05.js"></script>
     <script type='text/javascript' src="js/toolbar-button-06.js"></script>
+    <script type='text/javascript' src="js/toolbar-other-buttons.js"></script>
 
     <script type='text/javascript'>
         currentFunction = new DrawingRectangle(contextReal, contextDraft);

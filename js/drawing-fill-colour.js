@@ -1,7 +1,6 @@
 const Fillpickr = Pickr.create({
     el: '#pfillcolour', //element use for the square thing that will pop up in
     theme: 'classic', // or 'monolith', or 'nano'
-    default: 'rgba(150, 150, 150, 1)',
     
     swatches: [
         //sample colour selection
@@ -24,7 +23,7 @@ const Fillpickr = Pickr.create({
     components: {
 
         // Main components
-        preview: true,
+        // preview: true,
         opacity: true,
         hue: true,
 
@@ -33,8 +32,8 @@ const Fillpickr = Pickr.create({
             hex: true,
             rgba: true,
             input: true,
-            save:true,
-            clear: true,
+            // save:true,
+            // clear: true,
         }
     }
 }); 
@@ -44,5 +43,6 @@ Fillpickr.on('change', (color, instance) => {
     const rgbaColorFill = color.toRGBA().toString();
     console.log(rgbaColorFill);
     curFill = rgbaColorFill;
+    $('.flaticon-rounded-black-square-shape').css('color', `${curFill}`)
 });
 

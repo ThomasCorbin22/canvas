@@ -24,11 +24,12 @@ class DrawingZoomIn extends PaintFunction{
             canvasDraft = canvasZoomDraft;
             contextDraft = contextZoomDraft;
 
-            windowWidth = windowWidth * 3;
-            windowHeight = windowWidth * 3;
-
             zoomX = canvasWidth - coord[0]
             zoomY = canvasHeight - coord[1]
+
+            canvasWidth = canvasWidth * 3
+            canvasHeight = canvasHeight * 3
+
             zoomIn = true
             cPush()
         }

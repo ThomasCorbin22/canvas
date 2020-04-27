@@ -35,6 +35,8 @@ class DrawingRectangle extends PaintFunction{
         
 
         if (this.clickNum === 0) {
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            
             this.origX = coord[0];
             this.origY = coord[1];
             this.clickNum++
