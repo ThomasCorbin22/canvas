@@ -1,5 +1,6 @@
 const strokepickr = Pickr.create({
-    el: '.Strokecolor-picker', //element use for the square thing that will pop up in
+    // el: '.Strokecolor-picker', //element use for the square thing that will pop up in
+    el: '#pstrokecolour',
     theme: 'classic', // or 'monolith', or 'nano'
     default: 'rgba(50, 50, 50, 1)',
     
@@ -41,6 +42,7 @@ const strokepickr = Pickr.create({
 
 strokepickr.on('change', (color, instance) => {
     const rgbaColorStroke = color.toRGBA().toString();
+    console.log(rgbaColorStroke)
     curStroke = rgbaColorStroke;
  
 });

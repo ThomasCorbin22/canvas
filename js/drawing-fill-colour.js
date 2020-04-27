@@ -1,5 +1,5 @@
 const Fillpickr = Pickr.create({
-    el: '.Fillcolor-picker', //element use for the square thing that will pop up in
+    el: '#pfillcolour', //element use for the square thing that will pop up in
     theme: 'classic', // or 'monolith', or 'nano'
     default: 'rgba(150, 150, 150, 1)',
     

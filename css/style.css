@@ -40,7 +40,8 @@ body{
 }
 
 #icons{
-    display: none
+    display: none;
+    position: relative
 }
 
 h1 {
@@ -144,4 +145,22 @@ opacity: 1;
 
 .flaticon-rounded-black-square-shape {
     color: purple
+}
+.popup {
+    position:absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, .5);
+}
+
+.popup label{
+    color: white;
+    font-size: 2rem;
+    font-weight: 500
 }
