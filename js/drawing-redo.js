@@ -1,7 +1,3 @@
-$('#drawing-redo').click(()=>{
-    cRedo();
-});
-
 function cRedo() {
     if (cStep < cPushArray.length-1) {
         cStep++;

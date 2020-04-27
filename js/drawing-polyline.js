@@ -1,7 +1,3 @@
-$('#drawing-polyline').click(()=>{
-    currentFunction = new DrawingPolyline(contextReal,contextDraft);
-});
-
 class DrawingPolyline extends PaintFunction{
     constructor(contextReal,contextDraft){
         super();

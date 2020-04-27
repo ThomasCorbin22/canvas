@@ -22,8 +22,8 @@ let zoomY = 0
 let windowWidth = $(window).width();
 let windowHeight = $(window).height();
 
-let canvasWidth = windowWidth - 4
-let canvasHeight = windowHeight - 200
+let canvasWidth = $('#canvas-container').width();
+let canvasHeight = $('#canvas-container').height();
 
 let curStroke = "rgba(50, 50, 50, 1)"
 let curFill = "rgba(255, 150, 150, 1)"
@@ -65,3 +65,9 @@ let selectX = 0
 let selectY = 0
 let selectWidth = canvasWidth
 let selectHeight = canvasHeight
+
+let tab = 'welcome'
+
+var textBox = document.getElementById("textBox");
+var textFlag = false;
+var textContent = "";

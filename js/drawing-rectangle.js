@@ -1,7 +1,3 @@
-$('#drawing-rectangle').click(()=>{
-    currentFunction = new DrawingRectangle(contextReal,contextDraft);
-});
-
 class DrawingRectangle extends PaintFunction{
     constructor(contextReal,contextDraft){
         super();

@@ -1,7 +1,3 @@
-$('#drawing-quadratic').click(() => {
-    currentFunction = new DrawingQuadratic(contextReal, contextDraft);
-});
-
 class DrawingQuadratic extends PaintFunction {
     constructor(contextReal, contextDraft) {
         super();

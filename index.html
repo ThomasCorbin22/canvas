@@ -1,198 +1,254 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Canvas</title>
-        <meta name="description" content="Our canvas project">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Canvas</title>
+    <meta name="description" content="Our canvas project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="css/vendor/normalize.css">
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="css/vendor/boilerplate.css">
+    <link rel="stylesheet" href="css/vendor/normalize.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/boilerplate.css">
+    <link rel="stylesheet" href="css/vendor/flaticon.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
 
-        <link rel="stylesheet" href="css/style.css">
-        
-        <script src="https://kit.fontawesome.com/3414aa6637.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-        <div id="canvas-container">
-            <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
-            <canvas id="canvas-draft" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
-            <canvas id="canvas-select" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
-            
-            <canvas id="canvas-zoom-real" class="canvas canvas-zoom" width='3840px' height='2160px'></canvas>
-            <canvas id="canvas-zoom-draft" class="canvas canvas-zoom drawing-canvas" width='3840px' height='2160px'></canvas>
-            <canvas id="canvas-zoom-select" class="canvas canvas-zoom drawing-canvas" width='3840px' height='2160px'></canvas>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="buttons" class="col-3 d-flex justify-content-center flex-column">
+
+                <div id='tabs' class="row d-flex justify-content-center text-uppercase">
+                    <span class="btn btn-light btn-tabs" id="welcome">Welcome</span>
+                    <span class="btn btn-light btn-tabs" id="default">Default</span>
+                    <span class="btn btn-light btn-tabs" id="lines">Lines</span>
+                    <span class="btn btn-light btn-tabs" id="shapes">Shapes</span>
+                    <span class="btn btn-light btn-tabs" id="filters">Filters</span>
+                    <span class="btn btn-light btn-tabs" id="utilities">Utilities</span>
+                </div>
+
+                <div id='description' class="row d-block flex-grow-1">
+                    <h1 id='title'>Welcome To Our Canvas App</h1>
+                    <h3 id='subtitle'> - Christine & Thomas - </h3>
+                    <p id='howToUse'>This is a project that we worked on from 20/04/20 until the 28/04/20.<br>Click the
+                        tabs above to
+                        check out the various tools. Descriptions of how to use each tool will pop up here.</p>
+                </div>
+
+                <div id='icons' class="row justify-content-center">
+                    <span id='button-01' class="btn btn-light btn-icons">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p id='label-01' class="m-0 label-icons"></p>
+                        </div>
+                    </span>
+                    <span id='button-02' class="btn btn-light btn-icons">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p id='label-02' class="m-0 label-icons"></p>
+                        </div>
+                    </span>
+                    <span id='button-03' class="btn btn-light btn-icons">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p id='label-03' class="m-0 label-icons"></p>
+                        </div>
+                    </span>
+                    <span id='button-04' class="btn btn-light btn-icons">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p id='label-04' class="m-0 label-icons"></p>
+                        </div>
+                    </span>
+                    <span id='button-05' class="btn btn-light btn-icons">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p id='label-05' class="m-0 label-icons"></p>
+                        </div>
+                    </span>
+                    <span id='button-06' class="btn btn-light btn-icons">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p id='label-06' class="m-0 label-icons"></p>
+                        </div>
+                    </span>
+                </div>
+
+                <div id='tools' class="row d-flex justify-content-center">
+                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-stop">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools">Fill Colour</p>
+                        </div>
+                    </span>
+                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools">Stroke Colour</p>
+                        </div>
+                    </span>
+                    <span id='line-width' class="btn btn-light btn-tools flaticon-width">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools">Line Width</p>
+                        </div>
+                    </span>
+                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools">Font Size</p>
+                        </div>
+                    </span>
+                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools">Line Cap</p>
+                        </div>
+                    </span>
+                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <p class="m-0 label-tools">Line Style</p>
+                        </div>
+                    </span>
+                    <br>
+                </div>
+
+                <div class="d-none">
+                    <!-- Color control button  -->
+                    <span class="Strokecolor-picker"></span>
+                    <span class="Fillcolor-picker"></span>
+                    <!-- Strok selector -->
+                    <label for="width-select">Select the stroke width:</label>
+                    <select id="width-select" onchange="setstrokewidth()">
+                        <option value="1">1px</option>
+                        <option value="3">3px</option>
+                        <option value="5" selected="selected">5px</option>
+                        <option value="7">7px</option>
+                        <option value="9">9px</option>
+                        <option value="50">MAX</option>
+                    </select>
+                    <!-- fontsize selector -->
+                    <label for="font-select">Select the Font Size:</label>
+                    <select id="font-select" onchange="setfontpixel()">
+                        <option value="20px Ariel">Small</option>
+                        <option value="50px Ariel" selected="selected">Medium</option>
+                        <option value="70px Ariel">Large</option>
+                    </select>
+                    <!-- line type selector -->
+                    <label for="linetype-select">Select the Line Type:</label>
+                    <select id="linetype-select" onchange="setlinetype()">
+                        <option value="Normal" selected="selected">Normal</option>
+                        <option value="Dotted">Dotted</option>
+                    </select>
+                    <!-- line cap selector -->
+                    <label for="linecap-select">Select the Line Cap:</label>
+                    <select id="linecap-select" onchange="setlinecap()">
+                        <option value="butt">Butt</option>
+                        <option value="round" selected="selected">Round</option>
+                        <option value="square">square</option>
+                    </select>
+                    <!-- stamp selector -->
+                    <label for="stamp-select">Select the stamp:</label>
+                    <select id="stamp-select" onchange="setlinecap()">
+                        <option value="butt">Butt</option>
+                        <option value="round" selected="selected">Round</option>
+                        <option value="square">square</option>
+                    </select>
+                    <!-- rangeslider -->
+                    <div class="rangeslider">
+                        <label for="rangeslider">Size Range:</label>
+                        <input type="range" min="0.5" max="2" step="0.5" value="1" class="myslider" id="sliderRange"
+                            oninput="setStampScale()">
+                        <p>Value: <span id="demo"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="canvas-container" class="col-9">
+                <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
+                <canvas id="canvas-draft" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
+                <canvas id="canvas-select" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
+
+                <canvas id="canvas-zoom-real" class="canvas canvas-zoom" width='3840px' height='2160px'></canvas>
+                <canvas id="canvas-zoom-draft" class="canvas canvas-zoom drawing-canvas" width='3840px'
+                    height='2160px'></canvas>
+                <canvas id="canvas-zoom-select" class="canvas canvas-zoom drawing-canvas" width='3840px'
+                    height='2160px'></canvas>
+            </div>
         </div>
- 
-        <div id="buttons">
-            <span class="btn btn-primary fa fa-mouse-pointer" id="drawing-selection">Selection</span>
-            <span class="btn btn-primary fa fa-arrows-alt" id="drawing-move">Move</span>
-            <span class="btn btn-primary fas fa-eraser" id="drawing-eraser">Eraser</span>
-            <span class="btn btn-primary fas fa-font" id="drawing-text">Text</span>
-            <span class="btn btn-primary fab fa-quinscape" id="drawing-scale">Scale</span>
-            <span class="btn btn-primary fas fa-stamp" id="drawing-stamp">Stamp</span>            
-            <br>
-
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-line">Drawing Line</span>
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-brushedline">Brush</span>
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-straight">Straight Line</span>
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-polyline">Polyline</span>
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-arc">Arc</span>
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-bezier">Bezier Curve</span>
-            <span class="btn btn-success fa fa-paint-brush" id="drawing-quadratic">Quadractic Curve</span>
-            <br>
-            
-            <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Circle</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-oval">Oval</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Polygon</span>
-            <br>
-            
-            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-fill-colour">Fill Colour</span>
-            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-fill-bucket">Fill Bucket</span>
-            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-stroke-colour">Stroke Colour</span>
-            <span class="btn btn-secondary fa fa-paint-brush" id="drawing-stroke-width">Stroke Width</span>
-            <br>
-            
-            <span class="btn btn-danger fa fa-paint-brush" id="drawing-blur">Blur</span>
-            <span class="btn btn-danger fa fa-paint-brush" id="drawing-greyscale">Greyscale</span>
-            <span class="btn btn-danger fa fa-paint-brush" id="drawing-sepia">Sepia</span>
-            <span class="btn btn-danger fa fa-paint-brush" id="drawing-invert">Invert</span>
-            <span class="btn btn-danger fa fa-paint-brush" id="drawing-contrast">Contrast</span>
-            <span class="btn btn-danger fa fa-paint-brush" id="drawing-brightness">Brightness</span>
-            <br>
-            
-            <span class="btn btn-dark fa fa-paint-brush" id="drawing-undo">Undo</span>
-            <span class="btn btn-dark fa fa-paint-brush" id="drawing-redo">Redo</span>
-            <span class="btn btn-dark fa fa-paint-brush" id="drawing-zoomIn">Zoom In</span>
-            <span class="btn btn-dark fa fa-paint-brush" id="drawing-zoomOut">Zoom Out</span>
-            <span class="btn btn-dark fa fa-paint-brush" id="drawing-save">Save</span>
-            <span class="btn btn-dark fa fa-paint-brush" id="drawing-clear">Clear</span>
-            <!-- Color control button  -->
-            <span class="Strokecolor-picker"></span>
-            <span class="Fillcolor-picker"></span>
-            <!-- Strok selector -->
-            <label for="width-select">Select the stroke width:</label>
-            <select id="width-select" onchange="setstrokewidth()" >
-                <option value="1">1px</option>
-                <option value="3">3px</option>
-                <option value="5" selected="selected">5px</option>
-                <option value="7">7px</option>
-                <option value="9">9px</option>
-                <option value="50">MAX</option>
-            </select>
-            <!-- fontsize selector -->
-            <label for="font-select">Select the Font Size:</label>
-            <select id="font-select" onchange="setfontpixel()" >                  
-                <option value="20px Ariel">Small</option>
-                <option value="50px Ariel" selected="selected">Medium</option>
-                <option value="70px Ariel">Large</option>
-            </select>
-            <!-- line type selector -->
-            <label for="linetype-select">Select the Line Type:</label>
-            <select id="linetype-select" onchange="setlinetype()">
-                <option value="Normal" selected="selected">Normal</option>
-                <option value="Dotted">Dotted</option>
-            </select>
-            <!-- line cap selector -->
-            <label for="linecap-select">Select the Line Cap:</label>
-            <select id="linecap-select" onchange="setlinecap()">
-                <option value="butt">Butt</option>
-                <option value="round" selected="selected">Round</option>
-                <option value="square">square</option>
-            </select>
-             <!-- stamp selector -->
-             <label for="stamp-select">Select the stamp:</label>
-             <select id="stamp-select" onchange="setlinecap()">
-                 <option value="butt">Butt</option>
-                 <option value="round" selected="selected">Round</option>
-                 <option value="square">square</option>
-             </select>
-            <!-- rangeslider -->
-            <div class="rangeslider"> 
-                <label for="rangeslider">Size Range:</label>
-                <input type="range" min="0.5" max="2" step="0.5" value="1" 
-                               class="myslider" id="sliderRange" oninput="setStampScale()"> 
-                               <p>Value: <span id="demo"></span></p> 
-              </div> 
-        </div>
-
-        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smartline" title="Smartline">Smartline</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div>
-        
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        
-        <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-        <script src="js/vendor/jquery-3.5.0.min.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-
-        <script type='text/javascript' src="js/canvas-variables.js"></script>
-        <script type='text/javascript' src="js/canvas-functions.js"></script>
-        <script type='text/javascript' src="js/canvas-common.js"></script>
-        <script type='text/javascript' src="js/canvas-zoom.js"></script>
-
-        <script type='text/javascript' src="js/drawing-selection.js"></script>
-        <script type='text/javascript' src="js/drawing-move.js"></script>
-        <script type='text/javascript' src="js/drawing-eraser.js"></script>
-        <script type='text/javascript' src="js/drawing-text.js"></script>
-        <script type='text/javascript' src="js/drawing-scale.js"></script>
-        <script type='text/javascript' src="js/drawing-stamp.js"></script>
-        
-        <script type='text/javascript' src="js/drawing-line.js"></script>
-        <script type='text/javascript' src="js/drawing-line-brush.js"></script>
-        <script type='text/javascript' src="js/drawing-straight.js"></script>
-        <script type='text/javascript' src="js/drawing-polyline.js"></script>
-        <script type='text/javascript' src="js/drawing-arc.js"></script>
-        <script type='text/javascript' src="js/drawing-bezier.js"></script>
-        <script type='text/javascript' src="js/drawing-quadratic.js"></script>
-
-        <script type='text/javascript' src="js/drawing-rectangle.js"></script>
-        <script type='text/javascript' src="js/drawing-circle.js"></script>
-        <script type='text/javascript' src="js/drawing-oval.js"></script>
-        <script type='text/javascript' src="js/drawing-polygon.js"></script>
-        
-        <script type='text/javascript' src="js/drawing-fill-colour.js"></script>
-        <script type='text/javascript' src="js/drawing-fill-bucket.js"></script>
-        <script type='text/javascript' src="js/drawing-stroke-colour.js"></script>
-        <script type='text/javascript' src="js/drawing-stroke-width.js"></script>
-        <script type='text/javascript' src="js/drawing-font-pixel.js"></script>
-        <script type='text/javascript' src="js/drawing-line-cap.js"></script> 
-        <script type='text/javascript' src="js/drawing-line-type.js"></script> 
-        <script type='text/javascript' src="js/drawing.sliderscale.js"></script> 
+    </div>
 
 
 
-        
-        <script type='text/javascript' src="js/drawing-blur.js"></script>
-        <script type='text/javascript' src="js/drawing-sepia.js"></script>
-        <script type='text/javascript' src="js/drawing-greyscale.js"></script>
-        <script type='text/javascript' src="js/drawing-invert.js"></script>
-        <script type='text/javascript' src="js/drawing-contrast.js"></script>
-        <script type='text/javascript' src="js/drawing-brightness.js"></script>
-        
-        <script type='text/javascript' src="js/drawing-undo.js"></script>
-        <script type='text/javascript' src="js/drawing-redo.js"></script>
-        <script type='text/javascript' src="js/drawing-zoomIn.js"></script>
-        <script type='text/javascript' src="js/drawing-zoomOut.js"></script>
-        <script type='text/javascript' src="js/drawing-save.js"></script>
-        <script type='text/javascript' src="js/drawing-clear.js"></script>
+    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smartline" title="Smartline">Smartline</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div>     -->
 
-        <script type='text/javascript'>
-            currentFunction = new DrawingRectangle(contextReal,contextDraft); 
-            cPush();
-        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
 
-    </body>
+    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+    <script src="js/vendor/jquery-3.5.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+    <script type='text/javascript' src="js/canvas-variables.js"></script>
+    <script type='text/javascript' src="js/canvas-functions.js"></script>
+    <script type='text/javascript' src="js/canvas-common.js"></script>
+    <script type='text/javascript' src="js/canvas-zoom.js"></script>
+
+    <script type='text/javascript' src="js/drawing-selection.js"></script>
+    <script type='text/javascript' src="js/drawing-move.js"></script>
+    <script type='text/javascript' src="js/drawing-eraser.js"></script>
+    <script type='text/javascript' src="js/drawing-text.js"></script>
+    <script type='text/javascript' src="js/drawing-scale.js"></script>
+    <script type='text/javascript' src="js/drawing-stamp.js"></script>
+
+    <script type='text/javascript' src="js/drawing-line.js"></script>
+    <script type='text/javascript' src="js/drawing-line-brush.js"></script>
+    <script type='text/javascript' src="js/drawing-straight.js"></script>
+    <script type='text/javascript' src="js/drawing-polyline.js"></script>
+    <script type='text/javascript' src="js/drawing-arc.js"></script>
+    <script type='text/javascript' src="js/drawing-bezier.js"></script>
+    <script type='text/javascript' src="js/drawing-quadratic.js"></script>
+
+    <script type='text/javascript' src="js/drawing-rectangle.js"></script>
+    <script type='text/javascript' src="js/drawing-circle.js"></script>
+    <script type='text/javascript' src="js/drawing-oval.js"></script>
+    <script type='text/javascript' src="js/drawing-polygon.js"></script>
+    <script type='text/javascript' src="js/drawing-fill-bucket.js"></script>
+
+    <script type='text/javascript' src="js/drawing-blur.js"></script>
+    <script type='text/javascript' src="js/drawing-sepia.js"></script>
+    <script type='text/javascript' src="js/drawing-greyscale.js"></script>
+    <script type='text/javascript' src="js/drawing-invert.js"></script>
+    <script type='text/javascript' src="js/drawing-contrast.js"></script>
+    <script type='text/javascript' src="js/drawing-brightness.js"></script>
+
+    <script type='text/javascript' src="js/drawing-undo.js"></script>
+    <script type='text/javascript' src="js/drawing-redo.js"></script>
+    <script type='text/javascript' src="js/drawing-zoomIn.js"></script>
+    <script type='text/javascript' src="js/drawing-zoomOut.js"></script>
+    <script type='text/javascript' src="js/drawing-save.js"></script>
+    <script type='text/javascript' src="js/drawing-clear.js"></script>
+
+    <script type='text/javascript' src="js/drawing-fill-colour.js"></script>
+    <script type='text/javascript' src="js/drawing-stroke-colour.js"></script>
+    <script type='text/javascript' src="js/drawing-stroke-width.js"></script>
+    <script type='text/javascript' src="js/drawing-font-pixel.js"></script>
+
+    <script type='text/javascript' src="js/toolbar-tabs.js"></script>
+    <script type='text/javascript' src="js/toolbar-tools.js"></script>
+    <script type='text/javascript' src="js/toolbar-button-01.js"></script>
+    <script type='text/javascript' src="js/toolbar-button-02.js"></script>
+    <script type='text/javascript' src="js/toolbar-button-03.js"></script>
+    <script type='text/javascript' src="js/toolbar-button-04.js"></script>
+    <script type='text/javascript' src="js/toolbar-button-05.js"></script>
+    <script type='text/javascript' src="js/toolbar-button-06.js"></script>
+
+    <script type='text/javascript'>
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        cPush();
+    </script>
+
+</body>
+
 </html>

@@ -1,8 +1,3 @@
-$('#drawing-blur').click(() => {
-    applyFilter(blur)
-    cPush()
-});
-
 function blur(data, index, dataCopy) {
     let blurRed = 0;
     let blurGreen = 0;
