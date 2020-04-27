@@ -35,6 +35,7 @@ let curWidth = 5
 let curMitre = 10
 let numSides = 8
 let curOffset = 0;
+let linetype = [];
 
 let zoomIn = false
 let zoomOut = true
@@ -49,8 +50,9 @@ let constrastAmt = 1.4;
 let sepiaAmt = 1;
 let greyAmt = 1;
 
-let stampImg = 'images/abstractCircle.png';
-let stampSize = 250
+let stampImg = 'images/stickerpack/1721dcf1b733.png';
+let stampScale = 1 ;
+let stampSize = 250 * stampScale;
 
 let currentFunction;
 let dragging = false;

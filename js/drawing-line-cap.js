@@ -1,7 +1,7 @@
 function setlinecap(){
-    var linecap = document.getElementById("linecap-select").value;
-    console.log(linecap)
+    var linecapselect = document.getElementById("linecap-select").value;
+    console.log(linecapselect)
 
-    // curWidth = linecap;
-    //not working yet...cap variable not set
+    lineCap = linecapselect;
+
 }

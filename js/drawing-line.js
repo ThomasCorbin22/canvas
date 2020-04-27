@@ -13,6 +13,10 @@ class DrawingLine extends PaintFunction{
         this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
+        this.contextDraft.lineJoin = curJoin;
+        this.contextDraft.lineCap = lineCap;
+        this.contextDraft.setLineDash(linetype);
+        
         drawing = true
 
         this.contextDraft.beginPath();
@@ -42,6 +46,7 @@ class DrawingLine extends PaintFunction{
     onMouseEnter(){}
 
     draw(x,y, context){
+       
         context.lineTo(x,y);
         context.moveTo(x,y);
         context.closePath();
