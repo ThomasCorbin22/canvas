@@ -91,6 +91,26 @@
                 <option value="9">9px</option>
                 <option value="50">MAX</option>
             </select>
+            <!-- fontsize selector -->
+            <label for="font-select">Select the Font Size:</label>
+            <select id="font-select" onchange="setfontpixel()" >                    <option value="20px Ariel">small</option>
+                <option value="50px Ariel" selected="selected">medium</option>
+                <option value="70px Ariel">large</option>
+            </select>
+            <!-- line type selector -->
+            <label for="linetype-select">Select the Line Type:</label>
+            <select id="linetype-select" >
+            <option value="">N/A</option>
+            <option value="" selected="selected">N/A</option>
+            <option value="">N/A</option>
+            </select>
+            <!-- line cap selector -->
+            <label for="linecap-select">Select the Line Cap:</label>
+            <select id="linecap-select" >
+            <option value="butt">BUTT</option>
+            <option value="round" selected="selected">ROUND</option>
+            <option value="square">SQUARE</option>
+            </select>
         </div>
 
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smartline" title="Smartline">Smartline</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div>
@@ -133,7 +153,8 @@
         <script type='text/javascript' src="js/drawing-fill-bucket.js"></script>
         <script type='text/javascript' src="js/drawing-stroke-colour.js"></script>
         <script type='text/javascript' src="js/drawing-stroke-width.js"></script>
-        
+        <script type='text/javascript' src="js/drawing-font-pixel.js"></script>
+
         <script type='text/javascript' src="js/drawing-blur.js"></script>
         <script type='text/javascript' src="js/drawing-sepia.js"></script>
         <script type='text/javascript' src="js/drawing-greyscale.js"></script>
