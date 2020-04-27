@@ -14,6 +14,7 @@ class DrawingSection extends PaintFunction {
     onDragging() { }
 
     onMouseMove(coord, event) {
+        this.contextDraft.save()
         this.contextDraft.strokeStyle = "rgba(255, 0, 0, 1)"
         this.contextDraft.lineWidth = 2;
         this.contextDraft.setLineDash([3, 3]);
@@ -26,6 +27,7 @@ class DrawingSection extends PaintFunction {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.contextDraft.strokeRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY)
         }
+        this.contextDraft.restore()
     }
 
     onMouseUp(coord, event) {
@@ -33,51 +35,28 @@ class DrawingSection extends PaintFunction {
             this.origX = coord[0];
             this.origY = coord[1];
 
-            // For marching ants in selection
-
-            // selOrigX = 0
-            // selOrigY = 0
-            // selWidth = 0
-            // selHeight = 0
-
             this.clickNum++
             drawing = true
         }
 
         else if (this.clickNum === 1) {
+            this.contextDraft.save()
+            this.contextDraft.strokeStyle = "rgba(255, 0, 0, 1)"
+            this.contextDraft.lineWidth = 2;
+            this.contextDraft.setLineDash([3, 3]);
+
+            selecting = true
+            selectX = this.origX
+            selectY = this.origY
+            selectWidth = coord[0]- this.origX
+            selectHeight = coord[1] - this.origY
+
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.contextDraft.strokeRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
-
-            // For marching ants in selection
-            
-            // selOrigX = this.origX
-            // selOrigY = this.origY
-            // selWidth = coord[0] - this.origX
-            // selHeight = coord[1] - this.origY
-
-            // march();
-
+            this.contextDraft.strokeRect(selectX,selectY,selectWidth,selectHeight)
             this.clickNum = 0
+            this.contextDraft.restore()
         }
     }
     onMouseLeave() { }
     onMouseEnter() { }
 }
-
-
-// For marching ants in selection
-
-// function draw() {
-//     contextDraft.clearRect(0, 0, canvasWidth, canvasHeight);
-//     contextDraft.lineDashOffset = -curOffset;
-//     contextDraft.strokeRect(selOrigX, selOrigY, selWidth, selHeight);
-// }
-
-// function march() {
-//     curOffset++;
-//     if (curOffset > 16) {
-//         curOffset = 0;
-//     }
-//     draw();
-//     setTimeout(march, 20);
-// }

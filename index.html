@@ -19,22 +19,28 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
 
         <link rel="stylesheet" href="css/style.css">
-        <script src="https://kit.fontawesome.com/e6b2429683.js" crossorigin="anonymous"></script>
+        
+        <script src="https://kit.fontawesome.com/3414aa6637.js" crossorigin="anonymous"></script>
     </head>
     <body>
 
         <div id="canvas-container">
-            <canvas id="canvas-real" class="canvas" width='1280px' height='720px' ></canvas>
-            <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
-            <textarea name="textBox" id="textBox" class="text-style" cols="8" rows="2" ></textarea>
+            <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
+            <canvas id="canvas-draft" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
+            <canvas id="canvas-select" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
+            
+            <canvas id="canvas-zoom-real" class="canvas canvas-zoom" width='3840px' height='2160px'></canvas>
+            <canvas id="canvas-zoom-draft" class="canvas canvas-zoom drawing-canvas" width='3840px' height='2160px'></canvas>
+            <canvas id="canvas-zoom-select" class="canvas canvas-zoom drawing-canvas" width='3840px' height='2160px'></canvas>
         </div>
-        <div class="buttons">
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-selection">Selection</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-move">Move</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-eraser">Eraser</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-text">Text</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-scale">Scale</span>
-            <span class="btn btn-primary fa fa-paint-brush" id="drawing-stamp">Stamp</span>            
+ 
+        <div id="buttons">
+            <span class="btn btn-primary fa fa-mouse-pointer" id="drawing-selection">Selection</span>
+            <span class="btn btn-primary fa fa-arrows-alt" id="drawing-move">Move</span>
+            <span class="btn btn-primary fas fa-eraser" id="drawing-eraser">Eraser</span>
+            <span class="btn btn-primary fas fa-font" id="drawing-text">Text</span>
+            <span class="btn btn-primary fab fa-quinscape" id="drawing-scale">Scale</span>
+            <span class="btn btn-primary fas fa-stamp" id="drawing-stamp">Stamp</span>            
             <br>
 
             <span class="btn btn-success fa fa-paint-brush" id="drawing-line">Drawing Line</span>
@@ -48,7 +54,7 @@
             
             <span class="btn btn-info fa fa-square" id="drawing-rectangle">Drawing Rectangle</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-circle">Circle</span>
-            <span class="btn btn-info fa fa-paint-brush" id="drawing-Oval">Oval</span>
+            <span class="btn btn-info fa fa-paint-brush" id="drawing-oval">Oval</span>
             <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Polygon</span>
             <br>
             
@@ -106,6 +112,8 @@
             <option value="square">SQUARE</option>
             </select>
         </div>
+
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smartline" title="Smartline">Smartline</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div>
         
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -116,7 +124,10 @@
 
         <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 
+        <script type='text/javascript' src="js/canvas-variables.js"></script>
+        <script type='text/javascript' src="js/canvas-functions.js"></script>
         <script type='text/javascript' src="js/canvas-common.js"></script>
+        <script type='text/javascript' src="js/canvas-zoom.js"></script>
 
         <script type='text/javascript' src="js/drawing-selection.js"></script>
         <script type='text/javascript' src="js/drawing-move.js"></script>

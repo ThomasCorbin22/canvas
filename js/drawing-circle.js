@@ -25,7 +25,7 @@ class DrawingCircle extends PaintFunction {
         }
         else if (this.clickNum != 0) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            this.drawCenter(coord[0], coord[1], this.contextDraft);
+            this.drawCircle(coord[0], coord[1], this.contextDraft);
         }
     }
     onMouseUp(coord, event) {
@@ -43,7 +43,7 @@ class DrawingCircle extends PaintFunction {
 
             
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            this.drawCenter(coord[0], coord[1], this.contextReal);
+            this.drawCircle(coord[0], coord[1], this.contextReal);
             this.clickNum = 0;
             cPush()
         }
@@ -52,17 +52,9 @@ class DrawingCircle extends PaintFunction {
     onMouseLeave() { }
     onMouseEnter() { }
 
-    radiusCircle(x, y) {
-        let diffX = this.origX - x;
-        let diffY = this.origY - y;
-        let radiusSquare = Math.pow(diffX, 2) + Math.pow(diffY, 2);
-        let radius = Math.pow(radiusSquare, 0.5);
-        return radius;
-    }
-
-    drawCenter(x, y, context) {
+    drawCircle(x, y, context) {
         context.beginPath();
-        let radius = this.radiusCircle(x, y)
+        let radius = getChordLength(this.origX, this.origY, x, y)
         context.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
         context.fill();
         context.stroke();

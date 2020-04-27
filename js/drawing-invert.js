@@ -4,9 +4,9 @@ $('#drawing-invert').click(()=>{
 });
 
 function invert(data, index) {
-    let brightRed = Math.abs(data[index] - 255)
-    let brightGreen = Math.abs(data[index + 1] - 255)
-    let brightBlue = Math.abs(data[index + 2] - 255)
+    let brightRed = 255 - data[index]
+    let brightGreen = 255 - data[index + 1]
+    let brightBlue = 255 - data[index + 2]
 
     if (brightRed > 255) {
         data[index] = 255

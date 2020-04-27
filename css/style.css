@@ -11,16 +11,28 @@
     z-index: 5;
 }
 
+.canvas-zoom{
+    border: 0;
+    top:-720px;
+    left:-1280px;
+}
+
 #canvas-draft{
     background-color: transparent;
 }
+
 body{
     overflow:hidden;
 }
+
 #canvas-container{
     height:720px;
-}  
+}
 
+#buttons{
+    position: relative;
+    z-index: 6;
+}
 
 /* for the textbox,the z-index is not workign at the moment */
 .text-style {

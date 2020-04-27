@@ -48,7 +48,6 @@ class DrawingRectangle extends PaintFunction{
             this.clickNum = 0
             cPush()
         }
-
     }
     onMouseLeave(){}
     onMouseEnter(){}

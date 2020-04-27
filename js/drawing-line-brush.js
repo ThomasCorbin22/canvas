@@ -31,13 +31,12 @@ class DrawingBrushLine extends PaintFunction{
     }
 
     onMouseMove(){}
-    onMouseUp(){
+    onMouseUp(coord,event){
         let canvasPic = new Image();
         canvasPic.src = canvasDraft.toDataURL()
         canvasPic.onload = function () { 
             contextReal.drawImage(canvasPic, 0, 0); 
             contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            console.log('Got here')
             cPush()
         }
         this.contextDraft.shadowBlur = 0;
