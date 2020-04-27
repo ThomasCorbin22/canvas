@@ -40,6 +40,8 @@ class DrawingCircle extends PaintFunction {
             drawing = true
         }
         else if (this.clickNum != 0) {
+
+            
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.drawCenter(coord[0], coord[1], this.contextReal);
             this.clickNum = 0;

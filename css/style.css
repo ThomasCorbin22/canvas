@@ -4,7 +4,11 @@
     top:0px;
     bottom:0px;
     left:0px;
-    right:0px
+    right:0px;
+    /* for the textbox,the z-index is not workign at the moment */
+    float: left;
+    background-color: #fff;
+    z-index: 5;
 }
 
 #canvas-draft{
@@ -16,3 +20,14 @@ body{
 #canvas-container{
     height:720px;
 }  
+
+
+/* for the textbox,the z-index is not workign at the moment */
+.text-style {
+    float: left;
+    position: absolute;
+    /* font: 28px ; */
+    word-break: break-all;
+    background-color: transparent;
+    z-index: 1;
+}
