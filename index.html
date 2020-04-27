@@ -75,17 +75,55 @@
                             <p id='label-06' class="m-0 label-icons"></p>
                         </div>
                     </span>
+                    <div class="popup">
+                        <!-- ready -->
+                        <div id="popup-line-width">
+                            <label for="width-select">Select the Line Width:</label>
+                            <select id="width-select">
+                                <option value="5">Min</option>
+                                <option value="10">10px</option>
+                                <option value="20" selected="">20px</option>
+                                <option value="30">30px</option>
+                                <option value="40">40px</option>
+                                <option value="50">MAX</option>
+                            </select>
+                        </div>
+                        <div id="popup-font-size">
+                            <label for="font-select">Select the Font Size:</label>
+                            <select id="font-select">
+                                <option value="20px Ariel">Small</option>
+                                <option value="50px Ariel" selected="">Medium</option>
+                                <option value="70px Ariel">Large</option>
+                            </select>
+                        </div>
+                        
+                        <div id="popup-linetype-select">
+                            <label for="linetype-select">Select the Line Type:</label>
+                            <select id="linetype-select" >
+                                <option value="Normal" selected="selected">Normal</option>
+                                <option value="Dotted">Dotted</option>
+                            </select>
+                        </div>
+                        <div id="popup-linecap-select">
+                            <label for="linecap-select">Select the Line Cap:</label>
+                            <select id="linecap-select" >
+                                <option value="butt">Butt</option>
+                                <option value="round" selected="selected">Round</option>
+                                <option value="square">square</option>
+                            </select>
+                        </div>
+                    </div>    
                 </div>
 
                 <div id='tools' class="row d-flex justify-content-center">
                     <span id='fill-colour' class="btn btn-light btn-tools flaticon-stop">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Fill Colour</p>
+                            <p class="m-0 label-tools" id="pfillcolour">Fill Colour</p>
                         </div>
                     </span>
                     <span id='stroke-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Stroke Colour</p>
+                            <p class="m-0 label-tools" id="pstrokecolour">Stroke Colour</p>
                         </div>
                     </span>
                     <span id='line-width' class="btn btn-light btn-tools flaticon-width">
@@ -112,53 +150,44 @@
                 </div>
 
                 <div class="d-none">
-                    <!-- Color control button  -->
-                    <span class="Strokecolor-picker"></span>
-                    <span class="Fillcolor-picker"></span>
                     <!-- Strok selector -->
-                    <label for="width-select">Select the stroke width:</label>
-                    <select id="width-select" onchange="setstrokewidth()">
+                    <!-- <label for="width-select">Select the stroke width:</label>
+                    <select id="width-select">
                         <option value="1">1px</option>
                         <option value="3">3px</option>
                         <option value="5" selected="selected">5px</option>
                         <option value="7">7px</option>
                         <option value="9">9px</option>
                         <option value="50">MAX</option>
-                    </select>
+                    </select> -->
                     <!-- fontsize selector -->
-                    <label for="font-select">Select the Font Size:</label>
+                    <!-- <label for="font-select">Select the Font Size:</label>
                     <select id="font-select" onchange="setfontpixel()">
                         <option value="20px Ariel">Small</option>
                         <option value="50px Ariel" selected="selected">Medium</option>
                         <option value="70px Ariel">Large</option>
-                    </select>
+                    </select> -->
                     <!-- line type selector -->
-                    <label for="linetype-select">Select the Line Type:</label>
+                    <!-- <label for="linetype-select">Select the Line Type:</label>
                     <select id="linetype-select" onchange="setlinetype()">
                         <option value="Normal" selected="selected">Normal</option>
-                        <option value="Dotted">Dotted</option>
-                    </select>
+                        <option value="Dotted">Dotted</option> 
+                    </select>-->
                     <!-- line cap selector -->
-                    <label for="linecap-select">Select the Line Cap:</label>
+                    <!-- <label for="linecap-select">Select the Line Cap:</label>
                     <select id="linecap-select" onchange="setlinecap()">
                         <option value="butt">Butt</option>
                         <option value="round" selected="selected">Round</option>
                         <option value="square">square</option>
-                    </select>
-                    <!-- stamp selector -->
-                    <label for="stamp-select">Select the stamp:</label>
-                    <select id="stamp-select" onchange="setlinecap()">
-                        <option value="butt">Butt</option>
-                        <option value="round" selected="selected">Round</option>
-                        <option value="square">square</option>
-                    </select>
+                    </select> -->
+ 
                     <!-- rangeslider -->
-                    <div class="rangeslider">
+                    <!-- <div class="rangeslider">
                         <label for="rangeslider">Size Range:</label>
                         <input type="range" min="0.5" max="2" step="0.5" value="1" class="myslider" id="sliderRange"
                             oninput="setStampScale()">
                         <p>Value: <span id="demo"></span></p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
