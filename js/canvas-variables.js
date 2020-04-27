@@ -27,6 +27,7 @@ let canvasHeight = windowHeight - 200
 
 let curStroke = "rgba(50, 50, 50, 1)"
 let curFill = "rgba(255, 150, 150, 1)"
+let curFont = "50px Ariel"
 
 let curJoin = "round"
 let lineCap = 'round'
