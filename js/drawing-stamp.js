@@ -1,7 +1,3 @@
-$('#drawing-stamp').click(()=>{
-    currentFunction = new DrawingStamp(contextReal,contextDraft);
-});
-
 class DrawingStamp extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();

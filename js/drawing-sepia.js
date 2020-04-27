@@ -1,8 +1,3 @@
-$('#drawing-sepia').click(()=>{
-    applyFilter(sepia)
-    cPush()
-});
-
 function sepia(data, index) {
     let originalRed = data[index]
     let originalGreen = data[index + 1]

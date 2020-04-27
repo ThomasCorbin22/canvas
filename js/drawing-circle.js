@@ -1,7 +1,3 @@
-$('#drawing-circle').click(() => {
-    currentFunction = new DrawingCircle(contextReal, contextDraft);
-});
-
 class DrawingCircle extends PaintFunction {
     constructor(contextReal) {
         super();

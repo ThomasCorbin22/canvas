@@ -1,7 +1,3 @@
-$('#drawing-brushedline').click(()=>{
-    currentFunction = new DrawingBrushLine(contextReal,contextDraft);
-});
-
 class DrawingBrushLine extends PaintFunction{
     constructor(contextReal, contextDraft){
         super();

@@ -1,8 +1,3 @@
-$('#drawing-undo').click(()=>{
-    cUndo();
-});
-
-
 function cUndo() {
     if (cStep > 0) {
         cStep--;

@@ -1,12 +1,3 @@
-$('#drawing-text').click(() => {
-    currentFunction = new DrawingText(contextReal, contextDraft);
-
-});
-
-var textBox = document.getElementById("textBox");
-var textFlag = false;
-var textContent = "";
-
 class DrawingText extends PaintFunction {
     constructor(contextReal, contextDraft) {
         super();

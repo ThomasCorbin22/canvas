@@ -1,7 +1,3 @@
-$('#drawing-arc').click(() => {
-    currentFunction = new DrawingArc(contextReal, contextDraft);
-});
-
 class DrawingArc extends PaintFunction {
     constructor(contextReal, contextDraft) {
         super();

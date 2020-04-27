@@ -1,8 +1,3 @@
-$('#drawing-contrast').click(() => {
-    applyFilter(contrast)
-    cPush()
-});
-
 function contrast(data, index) {
     let contrastRed = Math.round((data[index] - 127.5) * constrastAmt + 127.5)
     let contrastGreen = Math.round((data[index + 1] - 127.5) * constrastAmt + 127.5)

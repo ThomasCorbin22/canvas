@@ -1,7 +1,3 @@
-$('#drawing-selection').click(() => {
-    currentFunction = new DrawingSection(contextReal, contextDraft);
-});
-
 class DrawingSection extends PaintFunction {
     constructor(contextReal, contextDraft) {
         super();
@@ -48,11 +44,11 @@ class DrawingSection extends PaintFunction {
             selecting = true
             selectX = this.origX
             selectY = this.origY
-            selectWidth = coord[0]- this.origX
+            selectWidth = coord[0] - this.origX
             selectHeight = coord[1] - this.origY
 
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.contextDraft.strokeRect(selectX,selectY,selectWidth,selectHeight)
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            this.contextDraft.strokeRect(selectX, selectY, selectWidth, selectHeight)
             this.clickNum = 0
             this.contextDraft.restore()
         }

@@ -1,7 +1,3 @@
-$('#drawing-oval').click(() => {
-    currentFunction = new DrawingOval(contextReal, contextDraft);
-});
-
 class DrawingOval extends PaintFunction {
     constructor(contextReal) {
         super();
