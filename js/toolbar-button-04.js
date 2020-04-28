@@ -32,8 +32,8 @@ $('#button-04').click(() => {
         $('#howToUse').html('Click once to create a starting point, move your mouse to size the radius of the circle and then click again to finish the circle.</p><p>Press ESC or ENTER if you want to quit the tool.</p><p>Select below how many sides you want you polygon to have:')
         
         $('#slider').css('display', 'flex')
-        $('#customRange').attr('max', '12')
         $('#customRange').attr('min', '3')
+        $('#customRange').attr('max', '12')
         $('#customRange').attr('step', '1')
         $('#customRange').val('3')
         $('.valueSpan2').html('3');

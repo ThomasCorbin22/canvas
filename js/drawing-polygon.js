@@ -15,6 +15,7 @@ class DrawingPolygon extends PaintFunction{
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
         this.contextDraft.fillStyle = curFill;
+        this.contextDraft.setLineDash(linetype);
 
         if (this.clickNum != 0 && drawing === false){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
@@ -31,6 +32,7 @@ class DrawingPolygon extends PaintFunction{
         this.contextReal.lineJoin = curJoin;
         this.contextReal.lineWidth = curWidth;
         this.contextReal.fillStyle = curFill;
+        this.contextReal.setLineDash(linetype);
         
         if (this.clickNum === 0) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);

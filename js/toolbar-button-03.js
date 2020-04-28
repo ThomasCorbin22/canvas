@@ -44,6 +44,7 @@ $('#button-03').click(() => {
         $('#howToUse').html('Click on the page once and your image will be set to sepia. Select how much sepia you want with the slider below.</p><p>0 is no greyscale at all and 1 will be a complete sepia image.')
         
         $('#slider').css('display', 'flex')
+        $('#customRange').attr('min', '0')
         $('#customRange').attr('max', '1')
         $('#customRange').attr('step', '0.1')
         $('#customRange').val('1')

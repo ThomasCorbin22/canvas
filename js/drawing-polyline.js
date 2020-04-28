@@ -14,6 +14,7 @@ class DrawingPolyline extends PaintFunction{
         this.contextDraft.fillStyle = curFill;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
+        this.contextDraft.setLineDash(linetype);
 
         if (this.clickNum != 0 && drawing === false){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
@@ -34,6 +35,7 @@ class DrawingPolyline extends PaintFunction{
         this.contextReal.fillStyle = curFill;
         this.contextReal.lineJoin = curJoin;
         this.contextReal.lineWidth = curWidth;
+        this.contextReal.setLineDash(linetype);
 
         if (this.clickNum === 0) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);

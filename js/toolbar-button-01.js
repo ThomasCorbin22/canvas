@@ -44,6 +44,7 @@ $('#button-01').click(() => {
         $('#howToUse').html('Click on the page once and your image will be blurred. Select how much blur you want with the slider below:')
 
         $('#slider').css('display', 'flex')
+        $('#customRange').attr('min', '0')
         $('#customRange').attr('max', '5')
         $('#customRange').attr('step', '1')
         $('#customRange').val('1')

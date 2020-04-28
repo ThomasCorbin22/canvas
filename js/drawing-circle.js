@@ -14,6 +14,7 @@ class DrawingCircle extends PaintFunction {
         this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.fillStyle = curFill;
         this.contextDraft.lineWidth = curWidth;
+        this.contextDraft.setLineDash(linetype);
 
         if (this.clickNum != 0 && drawing === false){
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
@@ -28,6 +29,7 @@ class DrawingCircle extends PaintFunction {
         this.contextReal.strokeStyle = curStroke;
         this.contextReal.fillStyle = curFill;
         this.contextReal.lineWidth = curWidth;
+        this.contextReal.setLineDash(linetype);
 
         if (this.clickNum === 0) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
