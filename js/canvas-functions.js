@@ -79,7 +79,13 @@ function drawStraight(x1, y1, x2, y2, context) {
 // Check if two sets of co-ordinates match
 function isClosed(x1, y1, x2, y2) {
     let coordMatch = 0
-    for (let i = -10; i < 10; i++) {
+
+    x1 = Math.round(x1)
+    y1 = Math.round(y1)
+    x2 = Math.round(x2)
+    y2 = Math.round(y2)
+
+    for (let i = -20; i < 20; i++) {
         if (x1 + i === x2) {
             coordMatch++
         }
@@ -350,7 +356,6 @@ function paintBucketFill(coord, context) {
 
     let curFillRGBA = curFill.replace(/\s+/g, '').split('(')[1].split(')')[0].split(',')
 
-
     while (pixelStack.length) {
         newPos = pixelStack.pop();
         x = newPos[0];
@@ -413,52 +418,35 @@ function paintBucketFill(coord, context) {
 }
 
 // Scale an image from original coordinates to new coordinates
-function scaleImage(x1, y1, x2, y2, width, height, point, context, canvas, rectangles, selection){
-    let initX = x1
-    let initY = y1
-    let lengthX = width
-    let lengthY = height
+function scaleImage(x, y, point, context, canvas, option){
+    let initX = selectX
+    let initY = selectY
+    let lengthX = selectWidth
+    let lengthY = selectHeight
 
     if (point === 1 || point === 4 || point === 7){
-        initX = x2
-        lengthX = selectWidth - (x2 - x1)
+        initX = x
+        lengthX = selectWidth - (x - selectX)
     }
     if (point === 1 || point === 2 || point === 3){
-        initY = y2
-        lengthY = selectHeight - (y2 - y1)
+        initY = y
+        lengthY = selectHeight - (y - selectY)
     }
     if (point === 3 || point === 6 || point === 9){
-        lengthX = (x2 - x1)
+        lengthX = (x - selectX)
     }
     if (point === 7 || point === 8 || point === 9){
-        lengthY = (y2 - y1)
+        lengthY = (y - selectY)
     }
 
-    context.drawImage(canvas,x1,y1,width,height,initX,initY,lengthX,lengthY)
+    context.drawImage(canvas,selectX,selectY,selectWidth,selectHeight,initX,initY,lengthX,lengthY)
 
-    if (rectangles === 'rects'){
-        points = {
-            1: [initX, initY],
-            2: [initX + lengthX / 2, initY],
-            3: [initX + lengthX, initY],
-
-            4: [initX, initY + lengthY / 2],
-            5: [initX + lengthX / 2, initY + lengthY / 2],
-            6: [initX + lengthX, initY + lengthY / 2],
-
-            7: [initX, initY + lengthY],
-            8: [initX + lengthX / 2, initY + lengthY],
-            9: [initX + lengthX, initY + lengthY]
-        }
-
+    if (option === 'rects'){
+        setPoints(initX, initY, lengthX, lengthY)
         drawRectBoundry()
     }
-
-    if (selection === 'select'){
-        selectX = initX
-        selectY = initY
-        selectWidth = lengthX
-        selectHeight = lengthY
+    else if (option === 'select'){
+        setSelection(initX, initY, lengthX, lengthY)
     }
 }
 
@@ -476,4 +464,42 @@ function drawRectBoundry(){
     drawRect(points[7][0], points[7][1], contextDraft)
     drawRect(points[8][0], points[8][1], contextDraft)
     drawRect(points[9][0], points[9][1], contextDraft)
+}
+
+function resetSeletion(){
+    selecting = false
+    selectX = 0
+    selectY = 0
+    selectWidth = canvasWidth
+    selectHeight = canvasHeight
+}
+
+function drawWhite(x, y, width, height, context){
+    context.save()
+    context.fillStyle = "rgba(255, 255, 255, 1)"
+    context.fillRect(x, y, width, height);
+    context.restore()
+}
+
+function setPoints(x, y, width, height){
+    points = {
+        1: [x, y],
+        2: [x + width / 2, y],
+        3: [x + width, y],
+
+        4: [x, y + height / 2],
+        5: [x + width / 2, y + height / 2],
+        6: [x + width, y + height / 2],
+
+        7: [x, y + height],
+        8: [x + width / 2, y + height],
+        9: [x + width, y + height]
+    }
+}
+
+function setSelection(x, y, width, height){
+    selectX = x
+    selectY = y
+    selectWidth = width
+    selectHeight = height
 }

@@ -1,8 +1,9 @@
 class DrawingClear extends PaintFunction{
-    constructor(contextReal, contextDraft){
+    constructor(contextReal, contextDraft, contextSelect){
         super();
         this.contextReal = contextReal;            
         this.contextDraft = contextDraft;
+        this.contextSelect = contextSelect;
     }
     
     onMouseDown(){}

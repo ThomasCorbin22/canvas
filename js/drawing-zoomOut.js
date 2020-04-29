@@ -1,8 +1,9 @@
 class DrawingZoomOut extends PaintFunction{
-    constructor(contextReal, contextDraft){
+    constructor(contextReal, contextDraft, contextSelect){
         super();
         this.contextReal = contextReal;            
         this.contextDraft = contextDraft;
+        this.contextSelect = contextSelect;
     }
     
     onMouseDown(){}
@@ -14,6 +15,8 @@ class DrawingZoomOut extends PaintFunction{
             contextReal = canvasReal.getContext('2d');
             canvasDraft = document.getElementById('canvas-draft');
             contextDraft = canvasDraft.getContext('2d');
+            canvasSelect = document.getElementById('canvas-select');
+            contextSelect = canvasDraft.getContext('2d');
 
             canvasWidth = canvasWidth / 3
             canvasHeight = canvasHeight / 3

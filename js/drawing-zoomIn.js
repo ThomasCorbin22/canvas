@@ -1,8 +1,9 @@
 class DrawingZoomIn extends PaintFunction{
-    constructor(contextReal, contextDraft){
+    constructor(contextReal, contextDraft, contextSelect){
         super();
         this.contextReal = contextReal;            
         this.contextDraft = contextDraft;            
+        this.contextSelect = contextSelect;            
     }
     
     onMouseDown(){}
@@ -23,6 +24,8 @@ class DrawingZoomIn extends PaintFunction{
             contextReal = contextZoomReal;
             canvasDraft = canvasZoomDraft;
             contextDraft = contextZoomDraft;
+            canvasSelect = canvasZoomSelect;
+            contextSelect = contextZoomSelect;
 
             zoomX = canvasWidth - coord[0]
             zoomY = canvasHeight - coord[1]

@@ -1,22 +1,9 @@
 $('#button-05').click(() => {
     if (tab === 'default'){
         // Scale
-        currentFunction = new DrawingScale(contextReal,contextDraft);
+        currentFunction = new DrawingScale(contextReal,contextDraft, contextSelect);
 
-        points = {
-            1: [selectX, selectY],
-            2: [selectX + selectWidth / 2, selectY],
-            3: [selectX + selectWidth, selectY],
-            
-            4: [selectX, selectY + selectHeight / 2],
-            5: [selectX + selectWidth / 2, selectY + selectHeight / 2],
-            6: [selectX + selectWidth, selectY + selectHeight / 2],
-            
-            7: [selectX, selectY + selectHeight],
-            8: [selectX + selectWidth / 2, selectY + selectHeight],
-            9: [selectX + selectWidth, selectY + selectHeight]
-        }
-
+        setPoints(selectX, selectY, selectWidth, selectHeight)
         drawRectBoundry()
 
         $('#title').html('Scale')
