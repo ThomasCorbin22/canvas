@@ -47,11 +47,6 @@ class DrawingScale extends PaintFunction {
         if (this.clickNum % 2 === 0) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 
-            console.log(points[2][0])
-            console.log(points[2][1])
-            console.log(coord[0])
-            console.log(coord[1])
-
             this.point = 0
 
             if (isClosed(coord[0], coord[1], points[1][0], points[1][1])) { this.point = 1 }
@@ -66,8 +61,13 @@ class DrawingScale extends PaintFunction {
 
             console.log(this.point)
         }
+        if (this.point === 5){
+            currentFunction = new DrawingMove(contextReal,contextDraft,contextSelect);
 
-        if (this.clickNum === 0 && this.point !== 0) {
+            setPoints(selectX, selectY, selectWidth, selectHeight)
+            drawRectBoundry()
+        }
+        else if (this.clickNum === 0 && this.point !== 0) {
             this.origSelX = selectX
             this.origSelY = selectY
             this.origSelWidth = selectWidth
