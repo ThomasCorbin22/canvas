@@ -4,7 +4,7 @@ This is online Canvas web application web game. It allowed us to test out linkin
 
 ## How to Play
 
-The general site is very user intuitive as there are multiple forms of tooltips and helpful descriptions. Click on one of the tabs at the top to go to whichever section you want and then hover over the buttons if the icons aren't clear. After you've clicked a tool, a short description of how to use the tool will come up. You can change additional settings like colours and font sizes on the fly with the tools at the very bottom of the toolbar
+The general site is very user intuitive as there are multiple forms of tooltips and helpful descriptions. Click on one of the tabs at the top to go to whichever section you want and then hover over the buttons if the icons aren't clear. After you've clicked a tool, a short description of how to use the tool will come up. You can click to show and change  the additional settings like colours and font sizes on the fly with the tools at the very bottom of the toolbar and click again to exit.
 
 ### Implementation
 
@@ -15,6 +15,7 @@ There were various areas of this project that were especially tricky
 3. Zoom In / Zoom Out
 4. Move / Scale
 5. Textbox
+6. Colour picker
 
 #### Fill Bucket
 
@@ -34,7 +35,12 @@ What a nightmare. we ended up adding a third canvas to the regular set of canvas
 
 #### Textbox
 
-Positioning the textbox was quite difficult and in the future we would like to add more interactivity to allow for movement after the submission of the text and perhaps a clearer preview of where the text will appear.
+The concept of Textbox itself wans't very tricky, the part that we spend most of the time to figure out how to make the textbox locate / positioning in the canvas and remain invisible until it is called and only added to the canvas once it submmit.In the future we would like to add more interactivity to allow for movement after the submission of the text and perhaps a clearer preview of where the text will appear.
+
+### Colour Picker
+
+In the beginning we tired to create our own colour platte and colour picker to apply in the canvas. However after studying for awhile, due to the time limitation it would be impossible to add all the varieties of function we would like to include, so we went for a colour picker library.
+
 
 ## Built With
 
