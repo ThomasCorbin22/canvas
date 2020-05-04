@@ -27,7 +27,7 @@ Suprisingly not too difficult to implement, but the Undo / Redo functions were e
 
 #### Zoom In / Zoom Out
 
-The basic premise for this tool is that the number of canvas' are doubled. The zoom canvases are three times as big as the regular canvas but only zoom in by 200%. This is because I wanted users to be able to use the move tool to move around whilst being able to interact with the zoomed in canvas. Currently users can use tools on the zoomed in canvas but there is a loss of quality when the canvas zooms back out. We still need to update the Zoom Out function to take into account of the moving of the canvas.
+The basic premise for this tool is that the number of canvases are doubled. The zoom canvases are three times as big as the regular canvas but only zoom in by 200%. This is because I wanted users to be able to use the move tool to move around whilst being able to interact with the zoomed in canvas. Currently users can use tools on the zoomed in canvas but there is a loss of quality when the canvas zooms back out. We still need to update the Zoom Out function to take into account of the moving of the canvas.
 
 #### Move / Scale
 
