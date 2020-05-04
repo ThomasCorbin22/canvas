@@ -35,11 +35,11 @@ What a nightmare. we ended up adding a third canvas to the regular set of canvas
 
 #### Textbox
 
-The concept of Textbox itself wans't very tricky, the part that we spend most of the time to figure out how to make the textbox locate / positioning in the canvas and remain invisible until it is called and only added to the canvas once it submmit.In the future we would like to add more interactivity to allow for movement after the submission of the text and perhaps a clearer preview of where the text will appear.
+The concept of Textbox itself wans't very tricky, we spend most of the time resolving how to position the textbox in the canvas and keep it invisible until called. In the future we would like to add more interactivity to allow for movement after the submission of the text.
 
 ### Colour Picker
 
-In the beginning we tired to create our own colour platte and colour picker to apply in the canvas. However after studying for awhile, due to the time limitation it would be impossible to add all the varieties of function we would like to include, so we went for a colour picker library.
+In the beginning we explored creating our own colour platte and colour picker for use in the canvas. However, due to time limitations, it would be impossible to add all the varieties of functionality we wanted to include, so we opted for a pre-built library instead.
 
 
 ## Built With
