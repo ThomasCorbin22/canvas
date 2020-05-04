@@ -2,9 +2,9 @@ $('#welcome').click(function(){
     tab = 'welcome'
     $('#icons').css('display', 'none')
 
-    $('#title').html('Welcome To Our Canvas App')
-    $('#subtitle').html(' - Christine & Thomas - ')
-    $('#howToUse').html('This is a project that we created together at Xccelerate.<br>Click the tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.')
+    title = 'Welcome To Our Canvas App'
+    subtitle = ' - Christine & Thomas - '
+    description = 'This is a project that we created together at Xccelerate.<br>Click the tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.'
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -32,9 +32,9 @@ $('#default').click(function(){
     $("#button-06").addClass('flaticon-stamp')
     $("#label-06").html('Stamp')
 
-    $('#title').html('Default')
-    $('#subtitle').html('Here are some general tools')
-    $('#howToUse').html('Click one and let\'s get started!')
+    title = 'Default'
+    subtitle = 'Here are some general tools'
+    description = 'Click one and let\'s get started!'
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -62,9 +62,9 @@ $('#lines').click(function(){
     $("#button-06").addClass('flaticon-line')
     $("#label-06").html('Curve')
 
-    $('#title').html('Lines')
-    $('#subtitle').html('Here are some line tools')
-    $('#howToUse').html('Click one and let\'s get started!')
+    title = 'Lines'
+    subtitle = 'Here are some line tools'
+    description = 'Click one and let\'s get started!'
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -91,9 +91,9 @@ $('#shapes').click(function(){
     $("#label-05").html('Paint Bucket')
     $("#button-06").css('display', 'none')
 
-    $('#title').html('Shapes')
-    $('#subtitle').html('Here are some shape tools')
-    $('#howToUse').html('Click one and let\'s get started!')
+    title = 'Shapes'
+    subtitle = 'Here are some shape tools'
+    description = 'Click one and let\'s get started!'
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -121,9 +121,9 @@ $('#filters').click(function(){
     $("#button-06").addClass('flaticon-sun')
     $("#label-06").html('Brightness')
 
-    $('#title').html('Filters')
-    $('#subtitle').html('Here are some filters')
-    $('#howToUse').html('Click one and let\'s get started!')
+    title = 'Filters'
+    subtitle = 'Here are some filters'
+    description = 'Click one and let\'s get started!'
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -151,9 +151,9 @@ $('#utilities').click(function(){
     $("#button-06").addClass('flaticon-close')
     $("#label-06").html('Clear')
 
-    $('#title').html('Utilities')
-    $('#subtitle').html('Here are some utilities')
-    $('#howToUse').html('Click one and let\'s get started!')
+    title = 'Utilities'
+    subtitle = 'Here are some utilities'
+    description = 'Click one and let\'s get started!'
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')

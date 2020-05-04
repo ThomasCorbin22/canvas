@@ -6,9 +6,9 @@ $('#button-02').click(() => {
         setPoints(selectX, selectY, selectWidth, selectHeight)
         drawRectBoundry()
 
-        $('#title').html('Move')
-        $('#subtitle').html('Use this to move things on the page')
-        $('#howToUse').html('Click once to create a reference point, move your mouse to where you want to move your selection and then click again to finish the selection.</p><p>If nothing is selected then the whole canvas will be moved</p><p>Press ESC or ENTER if you want to quit the tool.')
+        title = 'Move'
+        subtitle = 'Use this to move things on the page'
+        description = 'Click once to create a reference point, move your mouse to where you want to move your selection and then click again to finish the selection.</p><p>If nothing is selected then the whole canvas will be moved</p><p>Press ESC or ENTER if you want to quit the tool.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
@@ -18,9 +18,9 @@ $('#button-02').click(() => {
         // Brush
         currentFunction = new DrawingBrushLine(contextReal,contextDraft);
 
-        $('#title').html('Brush')
-        $('#subtitle').html('Draw in a bit more of a fancy way!')
-        $('#howToUse').html('Click the mouse down and drag to continuously draw freehand.</p><p>Press ESC or ENTER if you want to quit the tool.')
+        title = 'Brush'
+        subtitle = 'Draw in a bit more of a fancy way!'
+        description = 'Click the mouse down and drag to continuously draw freehand.</p><p>Press ESC or ENTER if you want to cancel the drawing.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
@@ -30,9 +30,9 @@ $('#button-02').click(() => {
         // Circle
         currentFunction = new DrawingCircle(contextReal,contextDraft);
 
-        $('#title').html('Circle')
-        $('#subtitle').html('Draw a circle with a stroke and a fill')
-        $('#howToUse').html('Click once to create a starting point, move your mouse to size the radius of the circle and then click again to finish the circle.</p><p>Press ESC or ENTER if you want to quit the tool.')
+        title = 'Circle'
+        subtitle = 'Draw a circle with a stroke and a fill'
+        description = 'Click once to create a starting point, move your mouse to size the radius of the circle and then click again to finish the circle.</p><p>Press ESC or ENTER if you want to quit the tool.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
@@ -42,9 +42,9 @@ $('#button-02').click(() => {
         // Greyscale
         currentFunction = new DrawingGreyscale(contextReal,contextDraft);
 
-        $('#title').html('Greyscale')
-        $('#subtitle').html('Be trendy and turn it black and white!')
-        $('#howToUse').html('Click on the page once and your image will be set to greyscale. Select how much greyscale you want with the slider below.</p><p>0 is no greyscale at all and 1 will be a complete greyscale image.')
+        title = 'Greyscale'
+        subtitle = 'Be trendy and turn it black and white!'
+        description = 'Click on the page once and your image will be set to greyscale. Select how much greyscale you want with the slider below.</p><p>0 is no greyscale at all and 1 will be a complete greyscale image.'
 
         $('#slider').css('display', 'flex')
         $('#customRange').attr('max', '1')
@@ -60,12 +60,15 @@ $('#button-02').click(() => {
         // Redo
         currentFunction = new DrawingRedo(contextReal, contextDraft);
 
-        $('#title').html('Redo')
-        $('#subtitle').html('I reckon you nailed it the first time')
-        $('#howToUse').html('Click on the page once and you will go forward a step, keep clicking to keep going forward.')
+        title = 'Redo'
+        subtitle = 'I reckon you nailed it the first time'
+        description = 'Click on the page once and you will go forward a step, keep clicking to keep going forward.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
         $('#chooseCurve').css('display', 'none')
     }
+
+    setHTML(title,subtitle,description)
+
 });

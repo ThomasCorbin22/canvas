@@ -9,26 +9,18 @@ class DrawingStamp extends PaintFunction{
     onMouseDown(){}
     onDragging(){}
     onMouseMove(coord,event){
-        if (this.clickNum != 0 && drawing === false) {
+        if (drawing === false) {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.clickNum = 0
         }
-        else if (this.clickNum != 0){
+        else {
             this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
             this.draw(coord[0],coord[1], this.contextDraft);
         }
     }
     onMouseUp(coord,event){
-        if (this.clickNum === 0) {
-            this.clickNum++
-            drawing = true
-        }
-
-        else if (this.clickNum === 1){
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(coord[0],coord[1], this.contextReal);
-            cPush()
-        }
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        this.draw(coord[0],coord[1], this.contextReal);
+        cPush()
     }
     onMouseLeave(){}
     onMouseEnter(){}

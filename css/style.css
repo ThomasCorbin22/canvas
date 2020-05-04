@@ -16,6 +16,16 @@ h3 {
     font-size: 1rem
 }
 
+/* Colours */
+
+.white-colour{
+    color: rgba(255, 255, 255, 1)
+}
+
+.white-background{
+    background-color: rgba(255, 255, 255, 1)
+}
+
 /* Classes */
 
 .canvas{
@@ -37,32 +47,27 @@ h3 {
 .btn-icons {
     position: relative;
     width: 33%;
-    background-color: rgba(255, 255, 255, 1)
 }
 
 .btn-curve {
     position: relative;
     width: 49%;
-    background-color: rgba(255, 255, 255, 1)
 }
 
 .btn-tools {
     position: relative;
     width: 16.5%;
-    background-color: rgba(255, 255, 255, 1)
 }
 
 .btn-tabs {
     width: 33%;
     font-weight: 500;
     font-size: 0.7rem;
-    background-color: rgba(255, 255, 255, 1)
 }
 
 .btn-drop {
     font-weight: 300;
     font-size: 1rem;
-    background-color: rgba(255, 255, 255, 1)
 }
 
 .btn-drop:focus {
@@ -90,7 +95,17 @@ h3 {
     display: none;
     word-break: break-all;
     background-color: transparent;
+    border: 0;
     z-index: 1;
+    width: 1000px;
+    height: 70px;
+    font-family: Arial;
+    font-size: 50px;
+    resize: none;
+    color: rgba(128,0,128,1);
+}
+.text-style:focus {
+    outline: none;
 }
 
 /* style for the slider */
@@ -100,7 +115,6 @@ h3 {
 
 .myslider {
     -webkit-appearance: none;
-    background: rgba(255,255,255, 1)  ;
     width: 50%;
     height: 20px;
     opacity: 2;
@@ -126,12 +140,10 @@ h3 {
 }
 
 .label-icons{
-    color: rgba(255,255,255,1);
     font-size: 1.25rem;
 }
 
 .label-tools{
-    color: rgba(255,255,255,1);
     font-size: .75rem;
     line-height: 1;
 }

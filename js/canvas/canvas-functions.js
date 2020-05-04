@@ -466,6 +466,7 @@ function drawRectBoundry(){
     drawRect(points[9][0], points[9][1], contextDraft)
 }
 
+// Reset the selection variables
 function resetSeletion(){
     selecting = false
     selectX = 0
@@ -474,6 +475,7 @@ function resetSeletion(){
     selectHeight = canvasHeight
 }
 
+// Draw a white box
 function drawWhite(x, y, width, height, context){
     context.save()
     context.fillStyle = "rgba(255, 255, 255, 1)"
@@ -481,6 +483,7 @@ function drawWhite(x, y, width, height, context){
     context.restore()
 }
 
+// Set the new selection points
 function setPoints(x, y, width, height){
     points = {
         1: [x, y],
@@ -497,9 +500,16 @@ function setPoints(x, y, width, height){
     }
 }
 
+// Set the selection variables
 function setSelection(x, y, width, height){
     selectX = x
     selectY = y
     selectWidth = width
     selectHeight = height
+}
+
+function setHTML(title,subtitle,description){
+    $('#title').html(title)
+    $('#subtitle').html(subtitle)
+    $('#howToUse').html(description)
 }

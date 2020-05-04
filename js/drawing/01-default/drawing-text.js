@@ -9,6 +9,7 @@ class DrawingText extends PaintFunction {
 
         if (this.clickNum !== 1) {
             $('#textBox').css('display', 'block')
+            $('#textBox').focus()
 
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 
@@ -43,7 +44,7 @@ class DrawingText extends PaintFunction {
             textBox.value = "";
 
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            this.contextReal.fillText(textContent, this.origX, this.origY);
+            this.contextReal.fillText(textContent, this.origX, this.origY + curFontSize * 1.05);
             this.clickNum = 0
         }
     }

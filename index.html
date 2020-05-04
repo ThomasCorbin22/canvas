@@ -7,15 +7,13 @@
     <meta name="description" content="Our canvas project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/vendor/normalize.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/boilerplate.css">
+    <!-- Providing the icons for the various tools -->
     <link rel="stylesheet" href="css/vendor/flaticon/flaticon.css">
 
+    <!-- CSS for the colour picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
 
     <link rel="stylesheet" href="css/style.css">
@@ -27,23 +25,27 @@
         <div class="row">
             <div id="buttons" class="col-3 d-flex justify-content-center flex-column">
 
+                <!-- Tabs for the various groupings of tools -->
                 <div id='tabs' class="row d-flex justify-content-center text-uppercase">
-                    <span class="btn btn-light btn-tabs" id="welcome">Welcome</span>
-                    <span class="btn btn-light btn-tabs" id="default">Default</span>
-                    <span class="btn btn-light btn-tabs" id="lines">Lines</span>
-                    <span class="btn btn-light btn-tabs" id="shapes">Shapes</span>
-                    <span class="btn btn-light btn-tabs" id="filters">Filters</span>
-                    <span class="btn btn-light btn-tabs" id="utilities">Utilities</span>
+                    <span class="btn btn-light btn-tabs white-background" id="welcome">Welcome</span>
+                    <span class="btn btn-light btn-tabs white-background" id="default">Default</span>
+                    <span class="btn btn-light btn-tabs white-background" id="lines">Lines</span>
+                    <span class="btn btn-light btn-tabs white-background" id="shapes">Shapes</span>
+                    <span class="btn btn-light btn-tabs white-background" id="filters">Filters</span>
+                    <span class="btn btn-light btn-tabs white-background" id="utilities">Utilities</span>
                 </div>
 
+                <!-- Main body of the toolbar. This gives tips / options for using the tools -->
                 <div id='description' class="row d-block flex-grow-1">
 
+                    <!-- Main text that can be adjusted depending on the tool -->
                     <h1 id='title'>Welcome To Our Canvas App</h1>
                     <h3 id='subtitle'> - Christine & Thomas - </h3>
                     <p id='howToUse'>This is a project that we created together at Xccelerate.<br>Click the
                         tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.</p>
 
-                    <div id='slider' class="justify-content-center my-2">
+                    <!-- A default slider that can be adjusted depending on the tool -->
+                    <div id='slider' class="justify-content-center my-2 white-background">
                         <div class="w-100">
                             <input type="range" class="custom-range" id="customRange" step="1" min="0" max="5"
                                 value="1">
@@ -51,6 +53,7 @@
                         <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
                     </div>
 
+                    <!-- The various stamps available for when the stamp tool is used -->
                     <div id="stamps" class='justify-content-center align-items-center flex-wrap'>
                         <img class='stamp-img' src="./images/stickerpack/abstractCircle.png" alt="Abstract Circle">
                         <img class='stamp-img' src="./images/stickerpack/alapproved.png" alt="All Aproved">
@@ -72,55 +75,59 @@
                         <img class='stamp-img' src="./images/stickerpack/yellowbus.png" alt="Yellow Bus">
                     </div>
 
+                    <!-- Options to choose which advanced curve to use -->
                     <div id="chooseCurve">
-                        <span id='quadratic' class="btn btn-light btn-curve flaticon-curve-line">
+                        <span id='quadratic' class="btn btn-light btn-curve flaticon-curve-line white-background">
                             <div class="overlay d-flex justify-content-center align-items-center">
-                                <p class="m-0 label-icons">Quadratic</p>
+                                <p class="m-0 label-icons white-colour">Quadratic</p>
                             </div>
                         </span>
-                        <span id='bezier' class="btn btn-light btn-curve flaticon-line">
+                        <span id='bezier' class="btn btn-light btn-curve flaticon-line white-background">
                             <div class="overlay d-flex justify-content-center align-items-center">
-                                <p class="m-0 label-icons">Bezier</p>
+                                <p class="m-0 label-icons white-colour">Bezier</p>
                             </div>
                         </span>
                     </div>
 
                 </div>
 
+                <!-- The six main icons that will display tools, they will change on different tabs -->
                 <div id='icons' class="row justify-content-center">
-                    <span id='button-01' class="btn btn-light btn-icons">
+                    <span id='button-01' class="btn btn-light btn-icons white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p id='label-01' class="m-0 label-icons"></p>
+                            <p id='label-01' class="m-0 label-icons white-colour"></p>
                         </div>
                     </span>
-                    <span id='button-02' class="btn btn-light btn-icons">
+                    <span id='button-02' class="btn btn-light btn-icons white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p id='label-02' class="m-0 label-icons"></p>
+                            <p id='label-02' class="m-0 label-icons white-colour"></p>
                         </div>
                     </span>
-                    <span id='button-03' class="btn btn-light btn-icons">
+                    <span id='button-03' class="btn btn-light btn-icons white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p id='label-03' class="m-0 label-icons"></p>
+                            <p id='label-03' class="m-0 label-icons white-colour"></p>
                         </div>
                     </span>
-                    <span id='button-04' class="btn btn-light btn-icons">
+                    <span id='button-04' class="btn btn-light btn-icons white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p id='label-04' class="m-0 label-icons"></p>
+                            <p id='label-04' class="m-0 label-icons white-colour"></p>
                         </div>
                     </span>
-                    <span id='button-05' class="btn btn-light btn-icons">
+                    <span id='button-05' class="btn btn-light btn-icons white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p id='label-05' class="m-0 label-icons"></p>
+                            <p id='label-05' class="m-0 label-icons white-colour"></p>
                         </div>
                     </span>
-                    <span id='button-06' class="btn btn-light btn-icons">
+                    <span id='button-06' class="btn btn-light btn-icons white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p id='label-06' class="m-0 label-icons"></p>
+                            <p id='label-06' class="m-0 label-icons white-colour"></p>
                         </div>
                     </span>
+
+                    <!-- Pops for the various settings when clicked  -->
                     <div id="popup-line-width" class='popup'>
                         <label for="width-select">Select the Line Width:</label>
-                        <select id="width-select" class='btn btn-light btn-drop'>
+                        <select id="width-select" class='btn btn-light btn-drop white-background'>
                             <option value="5">Min</option>
                             <option value="10">10px</option>
                             <option value="20" selected="selected">20px</option>
@@ -131,23 +138,23 @@
                     </div>
                     <div id="popup-font-size" class='popup'>
                         <label for="font-select">Select the Font Size:</label>
-                        <select id="font-select" class='btn btn-light btn-drop'>
-                            <option value="20px Ariel">Small</option>
-                            <option value="50px Ariel" selected="selected">Medium</option>
-                            <option value="70px Ariel">Large</option>
+                        <select id="font-select" class='btn btn-light btn-drop white-background'>
+                            <option value="20px Arial">Small</option>
+                            <option value="50px Arial" selected="selected">Medium</option>
+                            <option value="70px Arial">Large</option>
                         </select>
                     </div>
                     
                     <div id="popup-linetype-select" class='popup'>
                         <label for="linetype-select">Select the Line Type:</label>
-                        <select id="linetype-select" class='btn btn-light btn-drop'>
+                        <select id="linetype-select" class='btn btn-light btn-drop white-background'>
                             <option value="Normal" selected="selected">Normal</option>
                             <option value="Dotted">Dotted</option>
                         </select>
                     </div>
                     <div id="popup-linecap-select" class='popup'>
                         <label for="linecap-select">Select the Line Cap:</label>
-                        <select id="linecap-select" class='btn btn-light btn-drop' >
+                        <select id="linecap-select" class='btn btn-light btn-drop white-background' >
                             <option value="butt">Butt</option>
                             <option value="round" selected="selected">Round</option>
                             <option value="square">Square</option>
@@ -155,35 +162,36 @@
                     </div>
                 </div>
 
+                <!-- Buttons for the various settings -->
                 <div id='tools' class="row d-flex justify-content-center text-center">
-                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-stop p-1">
+                    <span id='stroke-colour' class="btn btn-light btn-tools flaticon-stop p-1 white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools" id="pstrokecolour">Stroke Colour</p>
+                            <p class="m-0 label-tools white-colour" id="pstrokecolour">Stroke Colour</p>
                         </div>
                     </span>
-                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape p-1">
+                    <span id='fill-colour' class="btn btn-light btn-tools flaticon-rounded-black-square-shape p-1 white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools" id="pfillcolour">Fill Colour</p>
+                            <p class="m-0 label-tools white-colour" id="pfillcolour">Fill Colour</p>
                         </div>
                     </span>
-                    <span id='line-width' class="btn btn-light btn-tools flaticon-width p-1">
+                    <span id='line-width' class="btn btn-light btn-tools flaticon-width p-1 white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Line Width</p>
+                            <p class="m-0 label-tools white-colour">Line Width</p>
                         </div>
                     </span>
-                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1 p-1">
+                    <span id='font-size' class="btn btn-light btn-tools flaticon-font-1 p-1 white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Font Size</p>
+                            <p class="m-0 label-tools white-colour">Font Size</p>
                         </div>
                     </span>
-                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu p-1">
+                    <span id='line-cap' class="btn btn-light btn-tools flaticon-menu p-1 white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Line Cap</p>
+                            <p class="m-0 label-tools white-colour">Line Cap</p>
                         </div>
                     </span>
-                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line p-1">
+                    <span id='line-style' class="btn btn-light btn-tools flaticon-dashed-line p-1 white-background">
                         <div class="overlay d-flex justify-content-center align-items-center">
-                            <p class="m-0 label-tools">Line Style</p>
+                            <p class="m-0 label-tools white-colour">Line Style</p>
                         </div>
                     </span>
                     <br>
@@ -191,6 +199,7 @@
 
             </div>
 
+            <!-- The canvas containers, a set of three for both the real and the zoom conditions -->
             <div id="canvas-container" class="col-9">
                 <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
                 <canvas id="canvas-draft" class="canvas drawing-canvas" width='1280px' height='720px'></canvas>
@@ -219,51 +228,60 @@
     <script src="js/vendor/jquery-3.5.0.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
 
+    <!-- JS for the colour picker -->
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 
+    <!-- General scripts -->
     <script type='text/javascript' src="js/canvas/canvas-variables.js"></script>
     <script type='text/javascript' src="js/canvas/canvas-functions.js"></script>
     <script type='text/javascript' src="js/canvas/canvas-common.js"></script>
     <script type='text/javascript' src="js/canvas/canvas-zoom.js"></script>
 
-    <script type='text/javascript' src="js/drawing/drawing-selection.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-move.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-eraser.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-text.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-scale.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-stamp.js"></script>
+    <!-- Default tab -->
+    <script type='text/javascript' src="js/drawing/01-default/drawing-selection.js"></script>
+    <script type='text/javascript' src="js/drawing/01-default/drawing-move.js"></script>
+    <script type='text/javascript' src="js/drawing/01-default/drawing-eraser.js"></script>
+    <script type='text/javascript' src="js/drawing/01-default/drawing-text.js"></script>
+    <script type='text/javascript' src="js/drawing/01-default/drawing-scale.js"></script>
+    <script type='text/javascript' src="js/drawing/01-default/drawing-stamp.js"></script>
 
-    <script type='text/javascript' src="js/drawing/drawing-line.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-line-brush.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-straight.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-polyline.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-arc.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-bezier.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-quadratic.js"></script>
+    <!-- Lines tab -->
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-pencil.js"></script>
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-brush.js"></script>
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-pen.js"></script>
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-straight.js"></script>
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-arc.js"></script>
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-bezier.js"></script>
+    <script type='text/javascript' src="js/drawing/02-lines/drawing-quadratic.js"></script>
 
-    <script type='text/javascript' src="js/drawing/drawing-rectangle.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-circle.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-oval.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-polygon.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-fill-bucket.js"></script>
+    <!-- Shapes tab -->
+    <script type='text/javascript' src="js/drawing/03-shapes/drawing-rectangle.js"></script>
+    <script type='text/javascript' src="js/drawing/03-shapes/drawing-circle.js"></script>
+    <script type='text/javascript' src="js/drawing/03-shapes/drawing-oval.js"></script>
+    <script type='text/javascript' src="js/drawing/03-shapes/drawing-polygon.js"></script>
+    <script type='text/javascript' src="js/drawing/03-shapes/drawing-fill-bucket.js"></script>
 
-    <script type='text/javascript' src="js/drawing/drawing-blur.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-sepia.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-greyscale.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-invert.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-contrast.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-brightness.js"></script>
+    <!-- Filters tab -->
+    <script type='text/javascript' src="js/drawing/04-filters/drawing-blur.js"></script>
+    <script type='text/javascript' src="js/drawing/04-filters/drawing-sepia.js"></script>
+    <script type='text/javascript' src="js/drawing/04-filters/drawing-greyscale.js"></script>
+    <script type='text/javascript' src="js/drawing/04-filters/drawing-invert.js"></script>
+    <script type='text/javascript' src="js/drawing/04-filters/drawing-contrast.js"></script>
+    <script type='text/javascript' src="js/drawing/04-filters/drawing-brightness.js"></script>
 
-    <script type='text/javascript' src="js/drawing/drawing-undo.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-redo.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-zoomIn.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-zoomOut.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-save.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-clear.js"></script>
+    <!-- Utilities tab -->
+    <script type='text/javascript' src="js/drawing/05-utilities/drawing-undo.js"></script>
+    <script type='text/javascript' src="js/drawing/05-utilities/drawing-redo.js"></script>
+    <script type='text/javascript' src="js/drawing/05-utilities/drawing-zoomIn.js"></script>
+    <script type='text/javascript' src="js/drawing/05-utilities/drawing-zoomOut.js"></script>
+    <script type='text/javascript' src="js/drawing/05-utilities/drawing-save.js"></script>
+    <script type='text/javascript' src="js/drawing/05-utilities/drawing-clear.js"></script>
 
-    <script type='text/javascript' src="js/drawing/drawing-fill-colour.js"></script>
-    <script type='text/javascript' src="js/drawing/drawing-stroke-colour.js"></script>
+    <!-- Settings -->
+    <script type='text/javascript' src="js/drawing/06-settings/colour-selector-fill.js"></script>
+    <script type='text/javascript' src="js/drawing/06-settings/colour-selector-stroke.js"></script>
 
+    <!-- Toolbar scripts -->
     <script type='text/javascript' src="js/toolbar/toolbar-tabs.js"></script>
     <script type='text/javascript' src="js/toolbar/toolbar-tools.js"></script>
     <script type='text/javascript' src="js/toolbar/toolbar-button-01.js"></script>
@@ -274,10 +292,7 @@
     <script type='text/javascript' src="js/toolbar/toolbar-button-06.js"></script>
     <script type='text/javascript' src="js/toolbar/toolbar-other-buttons.js"></script>
 
-    <script type='text/javascript'>
-        currentFunction = new DrawingRectangle(contextReal, contextDraft);
-        cPush();
-    </script>
+    <script type='text/javascript' src="js/init.js"></script>
 
 </body>
 

@@ -46,30 +46,28 @@ $('#line-style').click(() => {
 
 
 $('#width-select').change(() => {
-    //setStrokeWidth
+    // Set stroke width
     curWidth = Number($("#width-select").val())
-    console.log(curWidth)
 })
 
 $('#font-select').change(() => {
-    //setfontpixel
+    // Set text size
     curFont = $("#font-select").val();
-    console.log(curFont)
+    curFontSize = Number(curFont.split('p')[0])
+    $('.text-style').css('font-size', `${curFont.split(' ')[0]}`);
 })
 
 $('#linetype-select').change(() => {
-    //setlinetype
+    // Set line type
     if ($("#linetype-select").val() === 'Dotted'){
         linetype = [5,10]
     }
     else {
         linetype = []
     }
-    console.log(linetype)
 })
 
 $('#linecap-select').change(() => {
-    //setfontpixel
+    // Set line cap
     lineCap = $("#linecap-select").val();
-    console.log(lineCap)
 })

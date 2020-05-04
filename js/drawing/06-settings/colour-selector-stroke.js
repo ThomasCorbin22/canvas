@@ -41,7 +41,6 @@ const strokepickr = Pickr.create({
 
 strokepickr.on('change', (color, instance) => {
     const rgbaColorStroke = color.toRGBA().toString();
-    console.log(rgbaColorStroke)
     curStroke = rgbaColorStroke;
     $('.flaticon-stop').css('color', `${curStroke}`)
 });

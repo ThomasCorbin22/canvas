@@ -39,10 +39,9 @@ const Fillpickr = Pickr.create({
 }); 
 
 Fillpickr.on('change', (color, instance) => {
-    console.log(color.toRGBA().toString());
     const rgbaColorFill = color.toRGBA().toString();
-    console.log(rgbaColorFill);
     curFill = rgbaColorFill;
+    $('.text-style').css('color', `${rgbaColorFill}`);
     $('.flaticon-rounded-black-square-shape').css('color', `${curFill}`)
 });
 
