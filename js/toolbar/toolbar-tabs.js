@@ -6,6 +6,8 @@ $('#welcome').click(function(){
     subtitle = ' - Christine & Thomas - '
     description = 'This is a project that we created together at Xccelerate.<br>Click the tabs above to check out the various tools. Descriptions of how to use each tool will pop up here.'
 
+    setHTML(title,subtitle,description)
+
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
     $('#chooseCurve').css('display', 'none')
@@ -35,6 +37,8 @@ $('#default').click(function(){
     title = 'Default'
     subtitle = 'Here are some general tools'
     description = 'Click one and let\'s get started!'
+
+    setHTML(title,subtitle,description)
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -66,6 +70,8 @@ $('#lines').click(function(){
     subtitle = 'Here are some line tools'
     description = 'Click one and let\'s get started!'
 
+    setHTML(title,subtitle,description)
+
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
     $('#chooseCurve').css('display', 'none')
@@ -94,6 +100,8 @@ $('#shapes').click(function(){
     title = 'Shapes'
     subtitle = 'Here are some shape tools'
     description = 'Click one and let\'s get started!'
+
+    setHTML(title,subtitle,description)
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
@@ -125,6 +133,8 @@ $('#filters').click(function(){
     subtitle = 'Here are some filters'
     description = 'Click one and let\'s get started!'
 
+    setHTML(title,subtitle,description)
+
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
     $('#chooseCurve').css('display', 'none')
@@ -154,6 +164,8 @@ $('#utilities').click(function(){
     title = 'Utilities'
     subtitle = 'Here are some utilities'
     description = 'Click one and let\'s get started!'
+
+    setHTML(title,subtitle,description)
 
     $('#stamps').css('display', 'none')
     $('#slider').css('display', 'none')
