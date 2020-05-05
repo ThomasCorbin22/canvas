@@ -5,7 +5,7 @@ $('#button-01').click(() => {
 
         title = 'Selection'
         subtitle = 'Use this to select things on the page'
-        description = 'Click once to create a starting point, move your mouse to where you want to end your selection and then click again to finish the selection.</p><p>Then select either the TRANSFORM tool to manipulate your selection.</p><p>Press ESC or ENTER if you want to quit the tool.'
+        description = 'Click once to create a starting point, move your mouse to where you want to end your selection and then click again to finish the selection.</p><p>Then select the TRANSFORM tool to manipulate your selection.</p><p>Press ESC or ENTER if you want to quit the tool.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')

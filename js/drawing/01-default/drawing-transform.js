@@ -51,7 +51,7 @@ class DrawingTransform extends PaintFunction {
     onMouseUp(coord, event) {
         // On selection of the tool and every second click, reset the points being allocated so that the user can pick a new one.
         if (this.clickNum % 2 === 0) {
-            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            // this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 
             this.point = 0
 
@@ -103,7 +103,9 @@ class DrawingTransform extends PaintFunction {
             // Redraws the image back to the draft canvas with the red rectangles, which didn't want to be passed to the select canvas previously
             scaleImage(coord[0], coord[1], this.point, this.contextDraft, canvasSelect, 'rects')
         }
-        this.clickNum++
+        if (this.point !== 0){
+            this.clickNum++
+        }
     }
     onMouseLeave() { }
     onMouseEnter() { }
