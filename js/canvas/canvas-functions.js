@@ -424,19 +424,25 @@ function scaleImage(x, y, point, context, canvas, option){
     let lengthX = selectWidth
     let lengthY = selectHeight
 
-    if (point === 1 || point === 4 || point === 7){
-        initX = x
-        lengthX = selectWidth - (x - selectX)
+    if (point === 5){
+        initX = x - selectWidth / 2
+        initY = y - selectHeight / 2
     }
-    if (point === 1 || point === 2 || point === 3){
-        initY = y
-        lengthY = selectHeight - (y - selectY)
-    }
-    if (point === 3 || point === 6 || point === 9){
-        lengthX = (x - selectX)
-    }
-    if (point === 7 || point === 8 || point === 9){
-        lengthY = (y - selectY)
+    else {
+        if (point === 1 || point === 4 || point === 7){
+            initX = x
+            lengthX = selectWidth - (x - selectX)
+        }
+        if (point === 1 || point === 2 || point === 3){
+            initY = y
+            lengthY = selectHeight - (y - selectY)
+        }
+        if (point === 3 || point === 6 || point === 9){
+            lengthX = (x - selectX)
+        }
+        if (point === 7 || point === 8 || point === 9){
+            lengthY = (y - selectY)
+        }
     }
 
     context.drawImage(canvas,selectX,selectY,selectWidth,selectHeight,initX,initY,lengthX,lengthY)

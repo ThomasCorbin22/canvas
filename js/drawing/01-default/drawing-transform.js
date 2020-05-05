@@ -1,4 +1,4 @@
-class DrawingScale extends PaintFunction {
+class DrawingTransform extends PaintFunction {
     constructor(contextReal, contextDraft, contextSelect) {
         super();
         this.contextReal = contextReal;
@@ -65,15 +65,7 @@ class DrawingScale extends PaintFunction {
             else if (isClosed(coord[0], coord[1], points[8][0], points[8][1])) { this.point = 8 }
             else if (isClosed(coord[0], coord[1], points[9][0], points[9][1])) { this.point = 9 }
         }
-        // If the user picks the middle point then activate the move tool.
-        if (this.point === 5){
-            currentFunction = new DrawingMove(contextReal,contextDraft,contextSelect);
-
-            setPoints(selectX, selectY, selectWidth, selectHeight)
-            drawRectBoundry()
-        }
-        // On loading the tool
-        else if (this.clickNum === 0 && this.point !== 0) {
+        if (this.clickNum === 0 && this.point !== 0) {
             this.contextSelect.clearRect(0, 0, canvasSelect.width, canvasSelect.height);
 
             // Record original selection points, width and height, key for ESC the action
