@@ -5,19 +5,19 @@ $('#button-04').click(() => {
 
         title = 'Text'
         subtitle = 'Add some funky text'
-        description = 'Click once to position where you want the text. Write the text that you want and then click again to paste it onto the canvas'
+        description = 'Click once to position where you want the text. Write the text that you want and then click again to paste it onto the canvas.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
         $('#chooseCurve').css('display', 'none')
     }
     else if (tab === 'lines'){
-        // Straight Line
-        currentFunction = new DrawingStraightLine(contextReal,contextDraft);
+        // Arc
+        currentFunction = new DrawingArc(contextReal,contextDraft);
 
-        title = 'Line'
-        subtitle = 'Draw a straight line'
-        description = 'Click once to create a starting point, move your mouse to the end of the line and then click again to finish the line.</p><p>Press ESC or ENTER if you want to quit the tool.'
+        title = 'Arc'
+        subtitle = 'Make a consistent arc'
+        description = 'Click once to make a reference point, click once more to set the control point of the arc and then click again to create the arc. Straight lines will be extended from the reference points where no perfect arc can be made.</p><p>Press ESC or ENTER if you want to quit the tool.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
@@ -29,7 +29,7 @@ $('#button-04').click(() => {
 
         title = 'Polygon'
         subtitle = 'Draw a polygon of any number of sides'
-        description = 'Click once to create a starting point, move your mouse to size the radius of the circle and then click again to finish the circle.</p><p>Press ESC or ENTER if you want to quit the tool.</p><p>Select below how many sides you want you polygon to have:'
+        description = 'Click once to create a starting point, move your mouse to size the radius of the polygon and then click again to finish the polygon.</p><p>Press ESC or ENTER if you want to quit the tool.</p><p>Select below how many sides you want you polygon to have:'
         
         $('#slider').css('display', 'flex')
         $('#customRange').attr('min', '3')
@@ -66,4 +66,7 @@ $('#button-04').click(() => {
         $('#slider').css('display', 'none')
         $('#chooseCurve').css('display', 'none')
     }
+
+    setHTML(title,subtitle,description)
+
 });

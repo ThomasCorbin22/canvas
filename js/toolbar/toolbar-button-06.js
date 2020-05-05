@@ -18,15 +18,25 @@ $('#button-06').click(() => {
 
         $('#chooseCurve').css('display', 'none')
     }
+    else if (tab === 'shapes'){
+        // Custom
+        currentFunction = new DrawingPolyline(contextReal,contextDraft);
+
+        title = 'Custom'
+        subtitle = 'Make any shape you want'
+        description = 'Click once to create a reference point, move your mouse to where you want your next point and click again, finish drawing the shape by clicking close the starting position, or you can press ECS or ENTER to create an unclosed shape.'
+        
+        $('#stamps').css('display', 'none')
+        $('#slider').css('display', 'none')
+        $('#chooseCurve').css('display', 'none')
+    }
     else if (tab === 'lines'){
-        // Curve
+        // Bezier
         currentFunction = new DrawingBezier(contextReal,contextDraft);
-
-        title = 'Curve'
-        subtitle = 'Do you want a bezier or a quadratic?'
-        description = 'Click one of the buttons below:'
-
-        $('#chooseCurve').css('display', 'block')
+    
+        title = 'Bezier'
+        subtitle = 'Use two control points to create a curve.'
+        description = 'Click once to make a reference point, click once more to set the end point, then click to set the first control point and finally click once more to set the last control point.</p><p>Press ESC or ENTER if you want to quit the tool.'
 
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')

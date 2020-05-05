@@ -1,14 +1,14 @@
 $('#button-02').click(() => {
     if (tab === 'default'){
-        // Move
+        // Transform
         currentFunction = new DrawingMove(contextReal,contextDraft,contextSelect);
 
         setPoints(selectX, selectY, selectWidth, selectHeight)
         drawRectBoundry()
 
-        title = 'Move'
+        title = 'Transform'
         subtitle = 'Use this to move things on the page'
-        description = 'Click once to create a reference point, move your mouse to where you want to move your selection and then click again to finish the selection.</p><p>If nothing is selected then the whole canvas will be moved</p><p>Press ESC or ENTER if you want to quit the tool.'
+        description = 'Click once on the outer red boxes to start scaling in that direction, move your mouse to where you want to scale your selection and click to finish the scale.</p><p>To move, click the middle point once to create a reference point, move your mouse to where you want to move your selection and then click again to finish the move.</p><p>If nothing is selected then the whole canvas will be scaled / moved</p><p>Press ESC or ENTER to finish scaling the selection.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')

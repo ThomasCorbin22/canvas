@@ -1,32 +1,5 @@
 $('#button-05').click(() => {
     if (tab === 'default'){
-        // Scale
-        currentFunction = new DrawingScale(contextReal,contextDraft, contextSelect);
-
-        setPoints(selectX, selectY, selectWidth, selectHeight)
-        drawRectBoundry()
-
-        title = 'Scale'
-        subtitle = 'Transform as your heart desires'
-        description = 'Click on one of the red boxes to start scaling in that direction, move your mouse to where you want to scale your selection.</p><p>If nothing is selected then the whole canvas will be scaled</p><p>Press ESC or ENTER to finish scaling the selection.'
-        
-        $('#stamps').css('display', 'none')
-        $('#slider').css('display', 'none')
-        $('#chooseCurve').css('display', 'none')
-    }
-    else if (tab === 'lines'){
-        // Arc
-        currentFunction = new DrawingArc(contextReal,contextDraft);
-
-        title = 'Arc'
-        subtitle = 'Make a consistent arc'
-        description = 'Click once to make a reference point, click once more to set the control point of the arc and then click again to create the arc. Straight lines will be extended from the reference points where no perfect arc can be made.</p><p>Press ESC or ENTER if you want to quit the tool.'
-        
-        $('#stamps').css('display', 'none')
-        $('#slider').css('display', 'none')
-        $('#chooseCurve').css('display', 'none')
-    }
-    else if (tab === 'shapes'){
         // Paint Bucket
         currentFunction = new DrawingFillBucket(contextReal,contextDraft);
 
@@ -36,6 +9,36 @@ $('#button-05').click(() => {
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')
+        $('#chooseCurve').css('display', 'none')
+    }
+    else if (tab === 'lines'){
+        // Quadratic
+        currentFunction = new DrawingQuadratic(contextReal,contextDraft);
+    
+        title = 'Quadratic'
+        subtitle = 'Use a single control point to create a curve.'
+        description = 'Click once to make a reference point, click once more to set the end point and then click again to set the control point.</p><p>Press ESC or ENTER if you want to quit the tool.'
+
+        $('#stamps').css('display', 'none')
+        $('#slider').css('display', 'none')
+    }
+    else if (tab === 'shapes'){
+        // Star
+        currentFunction = new DrawingStar(contextReal,contextDraft);
+
+        title = 'Star'
+        subtitle = 'Draw a star with any number of points'
+        description = 'Click once to create a starting point, move your mouse to size the radius of the star and then click. Click once more to set the inset of the star.</p><p>Press ESC or ENTER if you want to quit the tool.</p><p>Select below how many points you want you star to have:'
+        
+        $('#slider').css('display', 'flex')
+        $('#customRange').attr('min', '3')
+        $('#customRange').attr('max', '12')
+        $('#customRange').attr('step', '1')
+        $('#customRange').val('6')
+        $('.valueSpan2').html('6');
+        sliderNum = 6
+        
+        $('#stamps').css('display', 'none')
         $('#chooseCurve').css('display', 'none')
     }
     else if (tab === 'filters'){
@@ -69,4 +72,7 @@ $('#button-05').click(() => {
         $('#slider').css('display', 'none')
         $('#chooseCurve').css('display', 'none')
     }
+    
+    setHTML(title,subtitle,description)
+
 });

@@ -12,12 +12,12 @@ $('#button-03').click(() => {
         $('#chooseCurve').css('display', 'none')
     }
     else if (tab === 'lines'){
-        // Pen
-        currentFunction = new DrawingPolyline(contextReal,contextDraft);
+        // Straight Line
+        currentFunction = new DrawingStraightLine(contextReal,contextDraft);
 
-        title = 'Pen'
-        subtitle = 'Make any shape you want'
-        description = 'Click once to create a reference point, move your mouse to where you want your next point and click again, finish drawing the shape by clicking close the starting position, or you can press ECS or ENTER to create an unclosed shape.'
+        title = 'Line'
+        subtitle = 'Draw a straight line'
+        description = 'Click once to create a starting point, move your mouse to the end of the line and then click again to finish the line.</p><p>Press ESC or ENTER if you want to quit the tool.'
         
         $('#stamps').css('display', 'none')
         $('#slider').css('display', 'none')

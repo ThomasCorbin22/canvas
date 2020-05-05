@@ -46,6 +46,7 @@ class DrawingText extends PaintFunction {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.contextReal.fillText(textContent, this.origX, this.origY + curFontSize * 1.05);
             this.clickNum = 0
+            cPush()
         }
     }
     onMouseLeave() { }

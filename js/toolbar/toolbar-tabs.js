@@ -23,14 +23,14 @@ $('#default').click(function(){
 
     $("#button-01").addClass('flaticon-square')
     $("#label-01").html('Select')
-    $("#button-02").addClass('flaticon-move')
-    $("#label-02").html('Move')
+    $("#button-02").addClass('flaticon-transform')
+    $("#label-02").html('Transform')
     $("#button-03").addClass('flaticon-eraser')
     $("#label-03").html('Eraser')
     $("#button-04").addClass('flaticon-font')
     $("#label-04").html('Text')
-    $("#button-05").addClass('flaticon-scale')
-    $("#label-05").html('Scale')
+    $("#button-05").addClass('flaticon-fill')
+    $("#label-05").html('Paint Bucket')
     $("#button-06").addClass('flaticon-stamp')
     $("#label-06").html('Stamp')
 
@@ -57,14 +57,14 @@ $('#lines').click(function(){
     $("#label-01").html('Pencil')
     $("#button-02").addClass('flaticon-paintbrush')
     $("#label-02").html('Brush')
-    $("#button-03").addClass('flaticon-pen-tool')
-    $("#label-03").html('Pen')
-    $("#button-04").addClass('flaticon-diagonal-line')
-    $("#label-04").html('Line')
-    $("#button-05").addClass('flaticon-curved-line')
-    $("#label-05").html('Arc')
+    $("#button-03").addClass('flaticon-diagonal-line')
+    $("#label-03").html('Line')
+    $("#button-04").addClass('flaticon-curved-line')
+    $("#label-04").html('Arc')
+    $("#button-05").addClass('flaticon-curve-line')
+    $("#label-05").html('Quadratic')
     $("#button-06").addClass('flaticon-line')
-    $("#label-06").html('Curve')
+    $("#label-06").html('Bezier')
 
     title = 'Lines'
     subtitle = 'Here are some line tools'
@@ -93,9 +93,10 @@ $('#shapes').click(function(){
     $("#label-03").html('Ellipse')
     $("#button-04").addClass('flaticon-yield')
     $("#label-04").html('Polygon')
-    $("#button-05").addClass('flaticon-fill')
-    $("#label-05").html('Paint Bucket')
-    $("#button-06").css('display', 'none')
+    $("#button-05").addClass('flaticon-star')
+    $("#label-05").html('Star')
+    $("#button-06").addClass('flaticon-unite')
+    $("#label-06").html('Custom')
 
     title = 'Shapes'
     subtitle = 'Here are some shape tools'

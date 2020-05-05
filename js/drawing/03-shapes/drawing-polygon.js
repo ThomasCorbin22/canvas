@@ -1,57 +1,57 @@
-class DrawingPolygon extends PaintFunction{
-    constructor(contextReal){
+class DrawingPolygon extends PaintFunction {
+    constructor(contextReal) {
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
         this.clickNum = 0
     }
-    
-    onMouseDown(){}
 
-    onDragging(){}
+    onMouseDown() { }
 
-    onMouseMove(coord,event){
+    onDragging() { }
+
+    onMouseMove(coord, event) {
         this.contextDraft.strokeStyle = curStroke;
         this.contextDraft.lineJoin = curJoin;
         this.contextDraft.lineWidth = curWidth;
         this.contextDraft.fillStyle = curFill;
         this.contextDraft.setLineDash(linetype);
 
-        if (this.clickNum != 0 && drawing === false){
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        if (this.clickNum != 0 && drawing === false) {
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.clickNum = 0
         }
-        else if (this.clickNum != 0){
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(coord[0],coord[1], sliderNum, this.contextDraft);
+        else if (this.clickNum != 0) {
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            this.draw(coord[0], coord[1], sliderNum, this.contextDraft);
         }
     }
 
-    onMouseUp(coord,event){
+    onMouseUp(coord, event) {
         this.contextReal.strokeStyle = curStroke;
         this.contextReal.lineJoin = curJoin;
         this.contextReal.lineWidth = curWidth;
         this.contextReal.fillStyle = curFill;
         this.contextReal.setLineDash(linetype);
-        
+
         if (this.clickNum === 0) {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            
+
             this.origX = coord[0];
             this.origY = coord[1];
             this.clickNum++
             drawing = true
         }
         else if (this.clickNum != 0) {
-            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
-            this.draw(coord[0],coord[1], sliderNum, this.contextReal);
+            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+            this.draw(coord[0], coord[1], sliderNum, this.contextReal);
             this.clickNum = 0
             cPush()
         }
     }
 
-    onMouseLeave(){}
-    onMouseEnter(){}
+    onMouseLeave() { }
+    onMouseEnter() { }
 
     draw(x, y, sides, context) {
         context.beginPath();
@@ -60,10 +60,12 @@ class DrawingPolygon extends PaintFunction{
             let angle = i * 2 * Math.PI / sides
             let rotatedX = Math.cos(angle) * (x - this.origX) - Math.sin(angle) * (y - this.origY) + this.origX;
             let rotatedY = Math.sin(angle) * (x - this.origX) + Math.cos(angle) * (y - this.origY) + this.origY;
-            context.lineTo(rotatedX,rotatedY);
+            context.lineTo(rotatedX, rotatedY);
         }
         context.closePath();
         context.fill();
         context.stroke();
     }
 }
+
+

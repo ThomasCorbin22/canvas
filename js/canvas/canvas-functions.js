@@ -508,6 +508,7 @@ function setSelection(x, y, width, height){
     selectHeight = height
 }
 
+// Set the HTML tags value
 function setHTML(title,subtitle,description){
     $('#title').html(title)
     $('#subtitle').html(subtitle)
